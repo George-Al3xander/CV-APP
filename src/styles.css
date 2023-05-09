@@ -38,6 +38,14 @@
   }
 /*-------------------------------------------------------------------------------------*/
 
-body {
-    background-color: red;
+.split,main {
+  display: flex;
+  justify-content: center;
+
+}
+
+
+.split {
+  flex-direction: row;
+  gap: 1rem;
 }
