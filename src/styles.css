@@ -38,7 +38,7 @@
   }
 /*-------------------------------------------------------------------------------------*/
 
-.split,main {
+.split,main,.dates {
   display: flex;
   justify-content: center;
 
@@ -51,10 +51,22 @@
 }
 
 
-input {
+input, textarea {
   border-bottom: 1px solid black;
 }
 
+form {
+  padding: 1rem;
+}
+
 fieldset {
+  display: flex;
+  flex-direction: column;
   border:  1px dashed red;
+  margin-block: 1rem;  
+  
+}
+
+.block_form {
+  margin-block: 1rem;
 }

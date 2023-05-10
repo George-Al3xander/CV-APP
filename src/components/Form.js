@@ -1,27 +1,6 @@
 import React, {Component} from "react";
-
-
-class Form_Exp extends Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-    render () {
-        return(
-            <fieldset id="education">
-                {this.props.nums.map((num) => {
-                    return <div key={"form_edu_" + num} id={"form_edu_" + num} >
-                        <input id={"form_edu_name_"+ num} type="text" />
-                        <input id={"form_edu_title_"+ num} type="text" />
-                        <input id={"form_edu_date_"+ num} type="date" />
-                        <button id={"form_edu_btn_"+ num} onClick={this.props.onClick} >Delete</button>
-                        </div>
-                })}
-            </fieldset>
-        )
-    }
-}
+import Form_Exp from "./Form_Exp";
+import Form_Edu from "./Form_Edu";
 
 class Form extends Component {
     constructor(props) {
@@ -29,11 +8,39 @@ class Form extends Component {
 
         this.state = {
             form_exp: [1],
-            form_edu: [1],
-
-            
+            form_edu: [1],            
         }
+        this.addFormExp = this.addFormExp.bind(this);
+        this.removeFormExp = this.removeFormExp.bind(this);
         this.addFormEdu = this.addFormEdu.bind(this);
+        this.removeFormEdu = this.removeFormEdu.bind(this);
+    }
+
+    addFormExp() {
+        this.setState({
+            form_exp:  this.state.form_exp.concat(this.state.form_exp[this.state.form_exp.length - 1]+1),
+        });
+        console.log(this.state.form_exp);
+        
+    }
+
+    removeFormExp(e) {
+        let val = e.target.id;
+        let length = val.length;
+        val = val[length-1];
+
+        let tempArray = [];
+        let form_exp_length = this.state.form_exp.length;        
+        if(form_exp_length > 1) {
+            for(let i=0; i < form_exp_length ; i++) {
+                if(val != this.state.form_exp[i]) {
+                    tempArray.push(this.state.form_exp[i]);                    
+                }
+            }            
+            this.setState({
+                form_exp: tempArray
+            })
+        }
     }
 
     addFormEdu() {
@@ -48,37 +55,44 @@ class Form extends Component {
         let length = val.length;
         val = val[length-1];
 
-        let tempArray = this.state.form_edu;
-
-        for(let i=0; i < this.state.form_edu.length; i++) {
-            if(val != this.state.form_edu[0]) {
-                tempArray.push(this.state.form_edu[i]);
-            }
+        let tempArray = [];
+        let form_edu_length = this.state.form_edu.length;        
+        if(form_edu_length > 1) {
+            for(let i=0; i < form_edu_length ; i++) {
+                if(val != this.state.form_edu[i]) {
+                    tempArray.push(this.state.form_edu[i]);                    
+                }
+            }            
+            this.setState({
+                form_edu: tempArray
+            })
         }
-
-        this.setState({
-            form_edu: tempArray
-        })
-
-        console.log()
     }
 
     render () {
         return(
             <form onSubmit={(e)=> {e.preventDefault()}}>
             <fieldset id="general_info">
-                <input onChange={this.props.onChangeHandle} id="name" type="text" placeholder="Enter your name"/>
-                <textarea name="" id="summary"  cols="20" rows="3"></textarea>
-                <input type="email" id="email" />
-                <input type="phone" id="phone"/>
-                <input type="text" />
+                <input onChange={this.props.changeName}  id="name" type="text" placeholder="Enter your name"/>
+                <textarea onChange={this.props.changeSummary} placeholder="Enter short summary of yourself"  name="" id="summary"  cols="20" rows="3"></textarea>
+                <input onChange={this.props.changeEmail} placeholder="Enter your email"   type="email" id="email" />
+                <input onChange={this.props.changePhone} placeholder="Enter your phone"   type="phone" id="phone"/>               
+            </fieldset>
+
+            <fieldset id="skills" >
+                <input placeholder="Enter your skills; Seperate by comma and space"     type="text" />
             </fieldset>
 
             <fieldset id="education">
-                <Form_Exp onClick={this.removeFormEdu} nums={this.state.form_exp}/>
-                <button onClick={this.addFormEdu}>Add</button>
-               
+                <Form_Edu changeEducationName = {this.props.changeEducationName}  onClick={this.removeFormEdu} nums={this.state.form_edu}/>
+                <button onClick={this.addFormEdu}>Add</button>               
             </fieldset>
+            <fieldset id="experience">
+                <Form_Exp onChangeHandle={this.props.onChangeHandle}  onClick={this.removeFormExp} nums={this.state.form_exp}/>
+                <button onClick={this.addFormExp}>Add</button>               
+            </fieldset>
+
+
         </form> 
         )
     }
