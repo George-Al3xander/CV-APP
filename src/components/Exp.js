@@ -13,7 +13,7 @@ class Exp extends Component {
         return(
             <ul className="exp" >
                 {this.props.experience.map((exp)=> {
-                    return <li c key={"exp_" + this.props.experience.indexOf(exp)} className="exp_block block_ul">
+                    return <li  key={"exp_" + this.props.experience.indexOf(exp)} className="exp_block block_ul">
                         <div className="exp_date date" >{exp.date}</div>
                         <div>
                             <h2>{exp.name_company}</h2>
