@@ -49,3 +49,12 @@
   flex-direction: row;
   gap: 1rem;
 }
+
+
+input {
+  border-bottom: 1px solid black;
+}
+
+fieldset {
+  border:  1px dashed red;
+}
