@@ -120,8 +120,8 @@ h1 {
   text-transform: uppercase;
 }
 
-li {
-  text-transform: capitalize;
+.skills li {
+  text-transform: uppercase;
 }
 
  .cv_left, .cv_right {
@@ -287,4 +287,27 @@ header h1 {
   cursor: pointer;
   background-color: red; 
   color: white;
+}
+
+
+.btn_submit {
+  padding: 5rem;
+  text-align: center;
+}
+
+.btn_submit button {
+  transition: all .5s ease; 
+  padding: 1rem 3rem; 
+  border-radius: 5rem;
+
+
+}
+
+.btn_submit button:hover {
+  color: white;
+  cursor: pointer;  
+  letter-spacing: 1.5rem;
+  background-color: var(--clr-secondary);
+  transition: all .5s ease;  
+
 }
