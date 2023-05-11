@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import ReactToPrint from "react-to-print"
+
 import CV from "./components/CV";
 import Form from "./components/Form";
 class App extends Component {
@@ -331,19 +331,11 @@ class App extends Component {
                         changeSkills = {this.change_skills}
                         test = {this.test}
                     />
-                    
-                    <CV ref={el => (this.componentRef = el)} data={this.state} />
+                    <CV data={this.state} />
                 
                 </div>
                 <div className="btn_submit">
                     <button onClick={this.submitForm}>{this.state.btn_text}</button>
-                    <ReactToPrint 
-                        trigger= {() => {
-                             return <button>Print test</button>                            
-                        }}
-                        documentTitle = "CV"
-                        content = {() => this.componentRef}
-                    />
                 </div>
             </div>
         )
