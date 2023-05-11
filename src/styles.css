@@ -138,6 +138,11 @@ h1 {
 
 .cv_right {
   padding-top: 9rem;
+  width: 30rem;
+}
+
+.cv_right p {
+  opacity: .7;
 }
 
 .cv_header {
@@ -149,6 +154,23 @@ h1 {
   margin-bottom: 5rem;
 }
 
+
+.block_ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.date, .block_ul_titles  h2:first-child {
+  font-weight: 700;
+}
+
+.block_ul_titles  h2:not(:first-child){
+      opacity: .7;
+}
+
+.block_ul_titles h2 {
+  margin-bottom: .5rem;
+}
 
 
 
@@ -187,8 +209,12 @@ ul {
   list-style: disc;
 }
 
-.skills li {
+.skills li,.block_ul_titles  ul li {
   opacity: .7;
   margin-block: .5rem;
   margin-left: 1.5rem;
+}
+
+.main_div_summary p {
+  word-wrap: break-word;
 }

@@ -24,16 +24,6 @@ class Form extends Component {
                 <input onChange={this.props.changeSkills} placeholder="Enter your skills; Seperate by comma and space"     type="text" />
             </fieldset>
 
-            <fieldset id="education">
-                <Form_Edu 
-                    arrayEducation={this.props.arrayEducation} changeEducationName = {this.props.changeEducationName}  
-                    changeEducationTitle = {this.props.changeEducationTitle} 
-                    changeEducationDate = {this.props.changeEducationDate} 
-                    
-                    onClick={this.props.removeFormEdu} 
-                />
-                <button onClick={this.props.addFormEdu}>Add</button>               
-            </fieldset>
             <fieldset id="experience">
                 <Form_Exp 
                     arrayExperience ={this.props.arrayExperience} 
@@ -46,6 +36,16 @@ class Form extends Component {
                     
                 />
                 <button onClick={this.props.addFormExp}>Add</button>               
+            </fieldset>
+            <fieldset id="education">
+                <Form_Edu 
+                    arrayEducation={this.props.arrayEducation} changeEducationName = {this.props.changeEducationName}  
+                    changeEducationTitle = {this.props.changeEducationTitle} 
+                    changeEducationDate = {this.props.changeEducationDate} 
+                    
+                    onClick={this.props.removeFormEdu} 
+                />
+                <button onClick={this.props.addFormEdu}>Add</button>               
             </fieldset>
 
 

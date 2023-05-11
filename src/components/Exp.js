@@ -15,7 +15,7 @@ class Exp extends Component {
                 {this.props.experience.map((exp)=> {
                     return <li  key={"exp_" + this.props.experience.indexOf(exp)} className="exp_block block_ul">
                         <div className="exp_date date" >From {exp.date[0]} to {exp.date[1]}</div>
-                        <div>
+                        <div className="block_ul_titles">
                             <h2>{exp.name_company}</h2>
                             <h2>{exp.title_position}</h2>
                             <ul>{exp.tasks.map((task) => {

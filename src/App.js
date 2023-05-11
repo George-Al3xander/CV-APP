@@ -285,7 +285,7 @@ class App extends Component {
     render() {
         return(
             <div className="split">
-                {/* <Form 
+                <Form 
                     addFormEdu = {this.addFormEdu}
                     removeFormEdu = {this.removeFormEdu}
 
@@ -311,7 +311,7 @@ class App extends Component {
 
                     changeSkills = {this.change_skills}
                     test = {this.test}
-                /> */}
+                />
                 <CV data={this.state} />
                 
             </div>
