@@ -93,7 +93,7 @@ fieldset {
 
 
 .block_form {
-  margin-block: 1rem;
+  margin-block: 1rem 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -164,6 +164,8 @@ li {
   display: flex;
   gap: 2rem;
 }
+
+
 
 .cv_date, .block_ul_titles  h2:first-child {
   font-weight: 700;
@@ -249,21 +251,40 @@ header h1 {
 
 
 .btn_add, .btn_del {
-  padding: 1rem 3rem;
+  
+  width: 5rem;
   width: min-content;  
+  transition: all .5s ease;
 }
 
 
 .btn_add {
+  margin-inline: auto;
   color: green;
 }
 
 .btn_del {
   color: red;
+  padding:.5rem 1rem;
+  letter-spacing: .3rem;
 }
 
 
-.btn_del:hover {
-  background-color: red;
+.btn_add:hover, .btn_del:hover {
+  border-radius: 5rem ;
+
+}
+
+.btn_add:hover {  
+  padding: 1rem 3rem;
+  cursor: pointer;
+  background-color: green;
+  color: white;
+}
+
+
+.btn_del:hover {  
+  cursor: pointer;
+  background-color: red; 
   color: white;
 }

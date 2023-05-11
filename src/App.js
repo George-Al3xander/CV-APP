@@ -26,7 +26,9 @@ class App extends Component {
                 date: ["2015","2022"],
                 num: 1,
             }],
-            skills: ["Cool","Funny","Clever"]
+            skills: ["Cool","Funny","Clever"],
+            isSubmitted: false,
+            btn_text: "Submit",
         }   
         
         this.change_name = this.change_name.bind(this);
@@ -47,6 +49,8 @@ class App extends Component {
         this.removeFormEdu = this.removeFormEdu.bind(this);  
         this.addFormExp = this.addFormExp.bind(this);
         this.removeFormExp = this.removeFormExp.bind(this);  
+
+        this.submitForm = this.submitForm.bind(this);
     }
 
 
@@ -276,6 +280,26 @@ class App extends Component {
         });
     }
 
+
+    submitForm() {
+        let status = this.state.isSubmitted;
+
+        if(status == false) {
+            document.getElementById("form").style.display = "none";
+            this.setState({
+                isSubmitted: true,
+                btn_text: "Edit"
+            });
+        }
+
+        else if(status == true) {
+            document.getElementById("form").style.display = "inline";
+            this.setState({
+                isSubmitted: false,
+                btn_text: "Submit"
+            });
+        }
+    }
     
 
     test(){
@@ -284,36 +308,35 @@ class App extends Component {
 
     render() {
         return(
-            <div className="split">
-                <Form 
-                    addFormEdu = {this.addFormEdu}
-                    removeFormEdu = {this.removeFormEdu}
-
-                    addFormExp = {this.addFormExp}
-                    removeFormExp = {this.removeFormExp}
-
-                    arrayEducation = {this.state.education}
-                    arrayExperience = {this.state.experience}
-                    changeName = {this.change_name} 
-                    changeEmail = {this.change_email}
-                    changePhone = {this.change_phone}
-                    changeSummary = {this.change_summary}
-
-                    changeEducationName = {this.change_education_name}
-                    changeEducationTitle= {this.change_education_title}
-                    changeEducationDate= {this.change_education_date}
-
-                    changeExperienceName = {this.change_experience_name}
-                    changeExperienceTitle= {this.change_experience_title}
-                    changeExperienceDate= {this.change_experience_date}
-                    changeExperienceTasks= {this.change_experience_tasks}
-
-
-                    changeSkills = {this.change_skills}
-                    test = {this.test}
-                />
-                <CV data={this.state} />
+            <div className="app">
+                <div className="split">
+                    <Form
+                        addFormEdu = {this.addFormEdu}
+                        removeFormEdu = {this.removeFormEdu}
+                        addFormExp = {this.addFormExp}
+                        removeFormExp = {this.removeFormExp}
+                        arrayEducation = {this.state.education}
+                        arrayExperience = {this.state.experience}
+                        changeName = {this.change_name}
+                        changeEmail = {this.change_email}
+                        changePhone = {this.change_phone}
+                        changeSummary = {this.change_summary}
+                        changeEducationName = {this.change_education_name}
+                        changeEducationTitle= {this.change_education_title}
+                        changeEducationDate= {this.change_education_date}
+                        changeExperienceName = {this.change_experience_name}
+                        changeExperienceTitle= {this.change_experience_title}
+                        changeExperienceDate= {this.change_experience_date}
+                        changeExperienceTasks= {this.change_experience_tasks}
+                        changeSkills = {this.change_skills}
+                        test = {this.test}
+                    />
+                    <CV data={this.state} />
                 
+                </div>
+                <div className="btn_submit">
+                    <button onClick={this.submitForm}>{this.state.btn_text}</button>
+                </div>
             </div>
         )
     }

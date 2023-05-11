@@ -12,7 +12,7 @@ class Form extends Component {
 
     render () {
         return(
-            <form onSubmit={(e)=> {e.preventDefault()}}>
+            <form id="form" onSubmit={(e)=> {e.preventDefault()}}>
             <fieldset id="general_info">
                 <legend>General info</legend>
                 <input onChange={this.props.changeName}  id="name" type="text" placeholder="Enter your name"/>
