@@ -10,15 +10,16 @@ class Form_Edu extends Component {
     render () {
         return(
             <div className="div_form_education">
-                {this.props.nums.map((num) => {
+                {this.props.arrayEducation.map((item) => {
+                   let num = item.num;
                     return <div className="block_form" key={"form_edu_" + num} id={"form_edu_" + num} >
                         <input onChange={this.props.changeEducationName}  placeholder="Enter name of the school/university/other" id={"form_edu_name_"+ num} type="text" />
-                        <input   placeholder="Enter title" id={"form_edu_title_"+ num} type="text" />
+                        <input onChange={this.props.changeEducationTitle}   placeholder="Enter title" id={"form_edu_title_"+ num} type="text" />
                         <div className="dates">
                             <div className="date">From
-                            <input   id={"form_edu_start_"+ num} type="month" /></div>
+                            <input onChange={this.props.changeEducationDate}   id={"form_edu_start_"+ num} type="year" /></div>
                             <div className="date" >
-                            To<input  id={"form_edu_end_"+ num} type="month" />
+                            To<input onChange={this.props.changeEducationDate}  id={"form_edu_end_"+ num} type="year" />
                             </div>
                         </div>                       
                         <br />
