@@ -17,9 +17,9 @@ class Form_Edu extends Component {
                         <input onChange={this.props.changeEducationTitle}   placeholder="Enter title" id={"form_edu_title_"+ num} type="text" />
                         <div className="dates">
                             <div className="date">From
-                            <input onChange={this.props.changeEducationDate}   id={"form_edu_start_"+ num} type="year" /></div>
+                            <input onChange={this.props.changeEducationDate}   id={"form_edu_start_"+ num} type="month" /></div>
                             <div className="date" >
-                            To<input onChange={this.props.changeEducationDate}  id={"form_edu_end_"+ num} type="year" />
+                            To<input onChange={this.props.changeEducationDate}  id={"form_edu_end_"+ num} type="month" />
                             </div>
                         </div>                       
                         <br />

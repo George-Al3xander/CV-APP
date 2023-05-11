@@ -38,6 +38,28 @@
   }
 /*-------------------------------------------------------------------------------------*/
 
+:root {
+
+  --ff-main: 'Inter', sans-serif;
+
+  --clr-primary: rgb(25, 167, 206);
+  --clr-secondary: rgb(20, 108, 148);
+  --clr-light: rgb(175, 211, 226);
+  --clr-accent: rgb(246, 241, 241);
+
+
+  --fs-default: 1.125rem;
+  --fs-medium: calc(var(--fs-default) * 1.3);
+  --fs-big: calc(var(--fs-default) * 2);
+
+}
+
+
+body {
+  font-family: var(--ff-main)
+}
+
+
 .split,main,.dates {
   display: flex;
   justify-content: center;
@@ -47,6 +69,7 @@
 
 .split {
   flex-direction: row;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -63,10 +86,71 @@ fieldset {
   display: flex;
   flex-direction: column;
   border:  1px dashed red;
-  margin-block: 1rem;  
-  
+  margin-block: 1rem;    
 }
+
 
 .block_form {
   margin-block: 1rem;
+  display: flex;
+  flex-direction: column;
 }
+
+.cv {
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: fs;
+}
+
+.cv_left {
+  background-color: var(--clr-primary);
+}
+
+.cv_right {
+  background-color: var(--clr-accent);
+}
+
+h1 {
+  font-size: var(--fs-medium);
+  margin-block: 1rem;
+  text-transform: uppercase;
+}
+
+.cv_left > *:not(.cv_header) {
+  padding: 2rem;
+}
+
+ .cv_right {
+  padding: 2rem;
+}
+
+.cv_left h1:not(.cv_header h1) {
+  color: var(--clr-accent);
+  border-bottom: 3px solid var(--clr-accent);
+}
+
+.cv_right h1 {
+  color: var(--clr-primary);
+  border-bottom: 3px solid var(--clr-primary);
+}
+
+.cv_header {
+    color: var(--clr-accent);
+    position: relative;   
+}
+
+.cv_header h1:first-child {
+    padding: 2rem 2rem 0rem 2rem;
+}
+
+.name {
+  color: black !important;
+  position: relative;
+  padding-inline:5rem;
+  
+  background-color: var(--clr-accent);
+ z-index: 1;
+  white-space: nowrap;
+  width: 100%;
+}
+
