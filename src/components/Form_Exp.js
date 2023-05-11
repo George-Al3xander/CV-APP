@@ -21,9 +21,9 @@ class Form_Exp extends Component {
                             To<input onChange={this.props.changeExperienceDate}  id={"form_exp_end_"+ num} type="month" />
                             </div>
                         </div>
-                        <input onChange={this.props.changeExperienceTasks}  placeholder="Enter some of your tasks that you had from your position. Seperate them with comma and space e.g. 'Create, Build, Find'" id={"form_exp_taks_"+ num}  type="text" />
+                        <input onChange={this.props.changeExperienceTasks}   placeholder="Seperate by comma and space e.g. `Create, Build`" id={"form_exp_taks_"+ num}  type="text" />
                         <br />
-                        <button id={"form_exp_btn_"+ num} onClick={this.props.onClick}>Delete</button>
+                        <button className="btn_del" id={"form_exp_btn_"+ num} onClick={this.props.onClick}>Delete</button>
                         </div>
                 })}
             </div>

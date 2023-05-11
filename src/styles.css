@@ -76,6 +76,7 @@ body {
 
 input, textarea {
   border-bottom: 1px solid black;
+  margin-block: .5rem;
 }
 
 form {
@@ -85,7 +86,8 @@ form {
 fieldset {
   display: flex;
   flex-direction: column;
-  border:  1px dashed red;
+  border:  1px dashed grey;
+  padding: 1rem;
   margin-block: 1rem;    
 }
 
@@ -100,6 +102,7 @@ fieldset {
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
+  height: min-content;  
 }
 
 .cv_left {
@@ -117,10 +120,12 @@ h1 {
   text-transform: uppercase;
 }
 
-
+li {
+  text-transform: capitalize;
+}
 
  .cv_left, .cv_right {
-  padding: 2rem;
+  padding: 2rem 2rem 5rem 2rem;
 }
 
 .cv_left {
@@ -160,8 +165,12 @@ h1 {
   gap: 2rem;
 }
 
-.date, .block_ul_titles  h2:first-child {
+.cv_date, .block_ul_titles  h2:first-child {
   font-weight: 700;
+}
+
+.cv_date {
+  line-height: 1.5;
 }
 
 .block_ul_titles  h2:not(:first-child){
@@ -172,7 +181,11 @@ h1 {
   margin-bottom: .5rem;
 }
 
-
+legend {
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
 
 
 .name {
@@ -182,9 +195,9 @@ h1 {
   color: black !important;
   text-align: left;
   white-space: nowrap;
-  padding-inline: 2rem 115%;
+  padding-inline: 3rem 125%;
   padding-block: 1rem;
-  background-color: var(--clr-accent); 
+  background-color: var(--clr-accent);  
 }
 
 .name h1 {
@@ -217,4 +230,40 @@ ul {
 
 .main_div_summary p {
   word-wrap: break-word;
+}
+
+header {
+  background-color: var(--clr-secondary);
+  
+}
+input {
+  line-height: 2;
+}
+
+header h1 {
+  margin: 0 0 5rem 0;
+  padding: 1rem 3rem;
+  color: var(--clr-accent);
+  font-style: italic;
+}
+
+
+.btn_add, .btn_del {
+  padding: 1rem 3rem;
+  width: min-content;  
+}
+
+
+.btn_add {
+  color: green;
+}
+
+.btn_del {
+  color: red;
+}
+
+
+.btn_del:hover {
+  background-color: red;
+  color: white;
 }

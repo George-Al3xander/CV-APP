@@ -14,6 +14,7 @@ class Form extends Component {
         return(
             <form onSubmit={(e)=> {e.preventDefault()}}>
             <fieldset id="general_info">
+                <legend>General info</legend>
                 <input onChange={this.props.changeName}  id="name" type="text" placeholder="Enter your name"/>
                 <input onChange={this.props.changeEmail} placeholder="Enter your email"   type="email" id="email" />
                 <input onChange={this.props.changePhone} placeholder="Enter your phone"   type="phone" id="phone"/>               
@@ -21,10 +22,12 @@ class Form extends Component {
             </fieldset>
 
             <fieldset id="skills" >
-                <input onChange={this.props.changeSkills} placeholder="Enter your skills; Seperate by comma and space"     type="text" />
+                <legend>Skills</legend>
+                <input onChange={this.props.changeSkills} placeholder="Seperate by comma and space e.g. `Funny, Cool`" type="text" />
             </fieldset>
 
             <fieldset id="experience">
+                <legend>Experience</legend>
                 <Form_Exp 
                     arrayExperience ={this.props.arrayExperience} 
                     changeExperienceName = {this.props.changeExperienceName}  
@@ -35,9 +38,10 @@ class Form extends Component {
                     onClick={this.props.removeFormExp} 
                     
                 />
-                <button onClick={this.props.addFormExp}>Add</button>               
+                <button className="btn_add"  onClick={this.props.addFormExp}>Add</button>               
             </fieldset>
             <fieldset id="education">
+                <legend>Education</legend>
                 <Form_Edu 
                     arrayEducation={this.props.arrayEducation} changeEducationName = {this.props.changeEducationName}  
                     changeEducationTitle = {this.props.changeEducationTitle} 
@@ -45,7 +49,7 @@ class Form extends Component {
                     
                     onClick={this.props.removeFormEdu} 
                 />
-                <button onClick={this.props.addFormEdu}>Add</button>               
+                <button className="btn_add"  onClick={this.props.addFormEdu}>Add</button>               
             </fieldset>
 
 

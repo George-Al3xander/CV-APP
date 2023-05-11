@@ -23,7 +23,7 @@ class Form_Edu extends Component {
                             </div>
                         </div>                       
                         <br />
-                        <button id={"form_edu_btn_"+ num} onClick={this.props.onClick} >Delete</button>
+                        <button className="btn_del"  id={"form_edu_btn_"+ num} onClick={this.props.onClick} >Delete</button>
                         </div>
                 })}
             </div>
