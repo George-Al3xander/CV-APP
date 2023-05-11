@@ -14,7 +14,9 @@ class CV extends Component {
             <div className="cv_left">
                 <div className="cv_header">
                     <h1>Resume</h1>
-                    <h1 className="name">{this.props.data.general_info.name}</h1>
+                    <div className="name" >
+                        <h1>{this.props.data.general_info.name}</h1>
+                    </div>
                 </div>
 
                 <div className="main_div_details">

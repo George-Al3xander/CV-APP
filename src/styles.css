@@ -99,10 +99,11 @@ fieldset {
 .cv {
   display: flex;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-size: fs;
+  overflow: hidden;
 }
 
 .cv_left {
+  color: var(--clr-accent);
   background-color: var(--clr-primary);
 }
 
@@ -112,18 +113,19 @@ fieldset {
 
 h1 {
   font-size: var(--fs-medium);
-  margin-block: 1rem;
+  margin-block: 1rem 1.5rem;
   text-transform: uppercase;
 }
 
-.cv_left > *:not(.cv_header) {
+
+
+ .cv_left, .cv_right {
   padding: 2rem;
 }
 
- .cv_right {
-  padding: 2rem;
+.cv_left {
+  min-width: 14rem;
 }
-
 .cv_left h1:not(.cv_header h1) {
   color: var(--clr-accent);
   border-bottom: 3px solid var(--clr-accent);
@@ -134,23 +136,59 @@ h1 {
   border-bottom: 3px solid var(--clr-primary);
 }
 
+.cv_right {
+  padding-top: 9rem;
+}
+
 .cv_header {
     color: var(--clr-accent);
     position: relative;   
 }
 
 .cv_header h1:first-child {
-    padding: 2rem 2rem 0rem 2rem;
+  margin-bottom: 5rem;
 }
+
+
+
+
 
 .name {
+  position: absolute;
+  top: 100%;
+  left: -22%;
   color: black !important;
-  position: relative;
-  padding-inline:5rem;
-  
-  background-color: var(--clr-accent);
- z-index: 1;
+  text-align: left;
   white-space: nowrap;
-  width: 100%;
+  padding-inline: 2rem 115%;
+  padding-block: 1rem;
+  background-color: var(--clr-accent); 
 }
 
+.name h1 {
+    font-size: var(--fs-big);
+  margin: 0 !important; 
+  padding: 0;
+}
+
+.phone-email h2{
+  line-height: 1.5;
+}
+
+.phone-email h3{
+ opacity: .7;
+}
+
+.phone-email > * {
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style: disc;
+}
+
+.skills li {
+  opacity: .7;
+  margin-block: .5rem;
+  margin-left: 1.5rem;
+}

@@ -10,11 +10,11 @@ class  Info extends Component {
             <div className="phone-email">
             <div>
                 <h2>Phone number</h2>
-                <h2>{this.props.info.phone}</h2>
+                <h3>{this.props.info.phone}</h3>
             </div>
             <div>
                 <h2>Email</h2>
-                <h2>{this.props.info.email}</h2>
+                <h3>{this.props.info.email}</h3>
             </div>
         </div>
         );
