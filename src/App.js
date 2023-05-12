@@ -1,4 +1,4 @@
-import React, {Component, useState} from "react";
+import React, {Component, useEffect, useState} from "react";
 
 import CV from "./components/CV";
 import Form from "./components/Form";
@@ -67,36 +67,52 @@ function App() {
 
     const change_education_name = (e) => {
         let num = e.target.id.split("_")[3];
+        let tempArray = education
+        for(let item of tempArray ) {
+            if(item.num == num) {
+                item.name_school = e.target.value;
+                
+            }
+        }
 
-        education[num-1].name_school = e.target.value;
-        setEducation(education);
+        setEducation(tempArray);
     }
 
     const change_education_title = (e) => {
-        let num = e.target.id.split("_")[3];       
+        let num = e.target.id.split("_")[3]; 
+        let tempArray = education
         
-        education[num-1].title = e.target.value;        
-        setEducation(education);
+        for(let item of tempArray ) {
+            if(item.num == num) {
+                item.title = e.target.value;        
+               
+            }
+        }
+        setEducation(tempArray);
     }   
 
     
     const change_education_date = (e) => {
-        
-
         let num = e.target.id.split("_")[3];
         let dir = e.target.id.split("_")[2];        
         let dateInput = e.target.value;
-
+        let tempArray = education;
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
+         for(let item of tempArray ) {
+            if(item.num == num) {
+                if(dir == "start") {
+                    item.date[0] = value;
+                }
+                else {
+                    item.date[1] = value;
+                }               
+             }
+         }
+
+
         
-        if(dir == "start") {
-            education[num-1].date[0] = value;
-        }
-        else {
-            education[num-1].date[1] = value;
-        }
-        setEducation(education) 
+        setEducation(tempArray) 
     }
 
     const addFormExp = () => {
@@ -109,6 +125,7 @@ function App() {
             num: experience[experience.length - 1].num + 1,
             }
         ))
+        
     }
     
     const removeFormExp = (e) => {
@@ -132,17 +149,32 @@ function App() {
     const change_experience_name = (e) => {
         let num = e.target.id.split("_")[3];
         let tempArray = experience;
-        
-        tempArray[num-1].name_company = e.target.value;
+
+        for(let item of tempArray ) {
+            if(item.num == num) {
+                item.name_company = e.target.value;
+            }
+        }
         //console.log(tempArray[num-1].name_company)
         setExperience(tempArray);
+        console.log(experience);
     }
 
+    useEffect(() => {
+
+    })
+
     const change_experience_title = (e) => {
-        let num = e.target.id.split("_")[3];       
+        let num = e.target.id.split("_")[3];  
+        let tempArray = experience;
+        for(let item of tempArray ) {
+             if(item.num == num) {
+                item.title_position  = e.target.value;        
+               
+             }
+        }     
         
-        experience[num-1].title_position  = e.target.value;        
-        setExperience(experience);
+        setExperience(tempArray);
     }   
 
     
@@ -155,25 +187,40 @@ function App() {
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
         
-        if(dir == "start") {
-            tempArray[num-1].date[0] = value;
-        }
-        else {
-            tempArray[num-1].date[1] = value;
-        }
+        // for(let item of tempArray ) {
+        //     if(item.num == num) {
+               
+        //     }
+        // }
+
+
+        for(let item of tempArray ) {
+            if(item.num == num) {
+                if(dir == "start") {
+                    item.date[0] = value;
+                }
+                else {
+                    item.date[1] = value;
+                }
+            }
+        }        
         
         setExperience(tempArray) 
     }
 
     const change_experience_tasks = (e) => {
         let num = e.target.id.split("_")[3];
-        let item = e.target.value;
-        item = item.split(", ");
-        console.log(num)
-        //let tempArray = this.state.experience;
-        experience[num-1].tasks= item;
-        //console.log(tempArray);
-        setExperience(experience);  
+        let tasks = e.target.value;
+        let tempArray = experience;
+        tasks = tasks.split(", ");
+        for(let item of tempArray ) {
+            if(item.num == num) {
+               item.tasks= tasks;
+               
+             }
+        } 
+        
+        setExperience(tempArray);  
     }
    
 
