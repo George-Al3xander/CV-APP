@@ -161,8 +161,9 @@ h1 {
 
 
 .block_ul {
-  display: flex;
-  gap: 2rem;
+  display: flex; 
+  margin-bottom: 2rem;
+  gap: 5rem;
 }
 
 
