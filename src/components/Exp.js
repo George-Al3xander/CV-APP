@@ -3,13 +3,13 @@ import React, {Component} from "react";
 
 class Exp extends Component {
     constructor(props) {
-        super(props);
+        super(props);        
     }
 
     
     
 
-    render() {
+    render() {  
         return(
             <ul className="exp" >
                 {this.props.experience.map((exp)=> {

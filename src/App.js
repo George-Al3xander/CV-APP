@@ -31,7 +31,8 @@ function App() {
     const[skills, setSkills] = useState(["Cool","Funny","Clever"]);
 
     
-    const[isSubmitted, submit] = useState(false);     
+    const[isSubmitted, setSubmit] = useState(false);     
+    const[buttonText, setButtonText] = useState("Submit");     
         
 
            
@@ -41,7 +42,7 @@ function App() {
             name_school: "",
             title: "",
             date:  ["",""],
-            num: education[education.length - 1].num+1,
+            num: education[education.length - 1].num + 1,
         }
         ))
     }
@@ -97,28 +98,16 @@ function App() {
         }
         setEducation(education) 
     }
-    
-
-
-    
-
-
-
-
-
-
-
-
 
     const addFormExp = () => {
         setExperience(experience.concat(
             {
-                name_company: "",
-                title_position: "",
-                tasks: [],
-                date: ["",""],
-                num: experience[experience.length - 1].num+1,
-        }
+            name_company: "",
+            title_position: "",
+            tasks: [],
+            date: ["",""],
+            num: experience[experience.length - 1].num + 1,
+            }
         ))
     }
     
@@ -142,9 +131,11 @@ function App() {
 
     const change_experience_name = (e) => {
         let num = e.target.id.split("_")[3];
-
-        experience[num-1].name_company = e.target.value;
-        setExperience(experience);
+        let tempArray = experience;
+        
+        tempArray[num-1].name_company = e.target.value;
+        //console.log(tempArray[num-1].name_company)
+        setExperience(tempArray);
     }
 
     const change_experience_title = (e) => {
@@ -160,140 +151,104 @@ function App() {
         let num = e.target.id.split("_")[3];
         let dir = e.target.id.split("_")[2];        
         let dateInput = e.target.value;
-
+        let tempArray = experience;
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
         
         if(dir == "start") {
-            experience[num-1].date[0] = value;
+            tempArray[num-1].date[0] = value;
         }
         else {
-            experience[num-1].date[1] = value;
+            tempArray[num-1].date[1] = value;
         }
-        setExperience(education) 
+        
+        setExperience(tempArray) 
+    }
+
+    const change_experience_tasks = (e) => {
+        let num = e.target.id.split("_")[3];
+        let item = e.target.value;
+        item = item.split(", ");
+        console.log(num)
+        //let tempArray = this.state.experience;
+        experience[num-1].tasks= item;
+        //console.log(tempArray);
+        setExperience(experience);  
+    }
+   
+
+
+
+    
+
+
+
+
+    const change_name = (e) => {
+        setGenInfo({           
+            name: e.target.value,
+            email: genInfo.email,
+            phone: genInfo.phone,
+            summary: genInfo.summary           
+        });
+    }
+
+    const change_email = (e) => {
+        setGenInfo({           
+            name: genInfo.name,
+            email: e.target.value,
+            phone: genInfo.phone,
+            summary: genInfo.summary           
+        });
+    }
+
+    const change_phone = (e) => {
+        setGenInfo({           
+            name: genInfo.name,
+            email: genInfo.email,
+            phone: e.target.value,
+            summary: genInfo.summary           
+        });
+    }
+
+    const change_summary = (e) => {
+        setGenInfo({            
+            name: genInfo.name,
+            email: genInfo.email,
+            phone: e.target.value,
+            summary: e.target.value            
+        });
+    }
+
+    const change_skills = (e) => {
+        let item = e.target.value;
+        item = item.split(", ");
+        console.log(item);
+        setSkills(item);
     }
 
 
+    const submitForm = ()  =>{ 
+        if(isSubmitted == false) {
+            document.getElementById("form").style.display = "none";
+            
+            setSubmit(true);
+            setButtonText("Edit");            
+        }
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-    // change_experience_tasks(e) {
-    //     let num = e.target.id.split("_")[3];
-    //     let item = e.target.value;
-    //     item = item.split(", ");
-    //     console.log(num)
-    //     let tempArray = this.state.experience;
-    //     tempArray[num-1].tasks= item;
-    //     console.log(tempArray);
-    //     this.setState({
-    //          //experience: tempArray,
-    //     })  
-    // }
-
-    
-
-
-
-
-    // change_name(e) {
-    //     this.setState({
-    //         general_info: {
-    //         name: e.target.value,
-    //         email: this.state.general_info.email,
-    //         phone: this.state.general_info.phone,
-    //         summary: this.state.general_info.summary
-    //         },
-    //     });
-    // }
-
-    // change_email(e) {
-    //     this.setState({
-    //         general_info: {
-    //         name: this.state.general_info.name,
-    //         email: e.target.value,
-    //         phone: this.state.general_info.phone,
-    //         summary: this.state.general_info.summary
-    //         },
-    //     });
-    // }
-
-    // change_phone(e) {
-    //     this.setState({
-    //         general_info: {
-    //         name: this.state.general_info.name,
-    //         email: this.state.general_info.email,
-    //         phone: e.target.value,
-    //         summary: this.state.general_info.summary
-    //         },
-    //     });
-    // }
-
-    // change_summary(e) {
-    //     this.setState({
-    //         general_info: {
-    //         name: this.state.general_info.name,
-    //         email: this.state.general_info.email,
-    //         phone: this.state.general_info.phone,
-    //         summary: e.target.value
-    //         },
-    //     });
-    // }
-
-    // change_skills(e) {
-    //     let item = e.target.value;
-    //     item = item.split(", ");
-    //     console.log(item);
-    //     this.setState({
-    //        skills: item,
-    //     });
-    // }
-
-
-    // submitForm() {
-    //     let status = this.state.isSubmitted;
-
-    //     if(status == false) {
-    //         document.getElementById("form").style.display = "none";
-    //         this.setState({
-    //             isSubmitted: true,
-    //             btn_text: "Edit"
-    //         });
-    //     }
-
-    //     else if(status == true) {
-    //         document.getElementById("form").style.display = "inline";
-    //         this.setState({
-    //             isSubmitted: false,
-    //             btn_text: "Submit"
-    //         });
-    //     }
-    // }
+        else if(isSubmitted == true) {
+            document.getElementById("form").style.display = "inline";
+            setSubmit(false);
+            setButtonText("Submit"); 
+        }
+    }
     
 
     // test(){
     //     console.log(1)
     // }
 
-    render() {
+    
         return(
             <div className="app">
                 <div className="split">
@@ -302,8 +257,8 @@ function App() {
                         removeFormEdu = {removeFormEdu}
                         addFormExp = {addFormExp}
                         removeFormExp = {removeFormExp}
-                        arrayEducation = {state.education}
-                        arrayExperience = {state.experience}
+                        arrayEducation = {education}
+                        arrayExperience = {experience}
                         changeName = {change_name}
                         changeEmail = {change_email}
                         changePhone = {change_phone}
@@ -316,17 +271,24 @@ function App() {
                         changeExperienceDate= {change_experience_date}
                         changeExperienceTasks= {change_experience_tasks}
                         changeSkills = {change_skills}
-                        test = {test}
+                        
                     />
-                    <CV data={this.state} />
+                    <CV data={{
+                        general_info: genInfo,
+                        skills: skills,
+                        experience: experience,
+                        education: education
+                    }
+
+                    } />
                 
                 </div>
                 <div className="btn_submit">
-                    <button onClick={this.submitForm}>{this.state.btn_text}</button>
+                    <button onClick={submitForm}>{buttonText}</button>
                 </div>
             </div>
         )
-    }
+    
 }
 
 
