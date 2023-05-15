@@ -1,19 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 
 
-class Exp extends Component {
-    constructor(props) {
-        super(props);        
-    }
-
-    
-    
-
-    render() {  
-        return(
+const Exp = (props) => {
+    return(
             <ul className="exp" >
-                {this.props.experience.map((exp)=> {
-                    return <li  key={"exp_" + this.props.experience.indexOf(exp)} className="exp_block block_ul">
+                {props.experience.map((exp)=> {
+                    return <li  key={"exp_" + props.experience.indexOf(exp)} className="exp_block block_ul">
                         <div className="exp_date cv_date" >From {exp.date[0]} <br /> To {exp.date[1]}</div>
                         <div className="block_ul_titles">
                             <h2>{exp.name_company}</h2>
@@ -25,8 +17,7 @@ class Exp extends Component {
                     </li>
                 })}
             </ul>
-        ) 
-    }
+        )    
 }
 
 

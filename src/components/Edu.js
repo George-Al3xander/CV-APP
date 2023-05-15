@@ -1,17 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 
 
-class Edu extends Component {
-    constructor(props) {
-        super(props);
-    }
-    
-
-    render() {
-        return(
+const Edu = (props) => {
+    return(
             <ul className="edu" >
-                {this.props.education.map((edu) => {
-                    return <li className="block_ul" key={"edu_"+this.props.education.indexOf(edu)} >
+                { props.education.map((edu) => {
+                    return <li className="block_ul" key={"edu_"+ props.education.indexOf(edu)} >
                         <div className="edu_date cv_date">From {edu.date[0]} <br /> To {edu.date[1]}</div>
                         <div className="block_ul_titles">
                             <h2>{edu.name_school}</h2>
@@ -20,8 +14,7 @@ class Edu extends Component {
                     </li>
                 })}
             </ul>
-        ) 
-    }
+        )     
 }
 
 

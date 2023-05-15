@@ -67,7 +67,7 @@ function App() {
 
     const change_education_name = (e) => {
         let num = e.target.id.split("_")[3];
-        let tempArray = education
+        let tempArray = [...education];
         for(let item of tempArray ) {
             if(item.num == num) {
                 item.name_school = e.target.value;
@@ -80,7 +80,7 @@ function App() {
 
     const change_education_title = (e) => {
         let num = e.target.id.split("_")[3]; 
-        let tempArray = education
+        let tempArray = [...education];
         
         for(let item of tempArray ) {
             if(item.num == num) {
@@ -96,7 +96,7 @@ function App() {
         let num = e.target.id.split("_")[3];
         let dir = e.target.id.split("_")[2];        
         let dateInput = e.target.value;
-        let tempArray = education;
+        let tempArray = [...education];
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
          for(let item of tempArray ) {
@@ -148,7 +148,7 @@ function App() {
 
     const change_experience_name = (e) => {
         let num = e.target.id.split("_")[3];
-        let tempArray = experience;
+        let tempArray = [...experience];
 
         for(let item of tempArray ) {
             if(item.num == num) {
@@ -166,7 +166,7 @@ function App() {
 
     const change_experience_title = (e) => {
         let num = e.target.id.split("_")[3];  
-        let tempArray = experience;
+        let tempArray = [...experience];
         for(let item of tempArray ) {
              if(item.num == num) {
                 item.title_position  = e.target.value;        
@@ -183,7 +183,7 @@ function App() {
         let num = e.target.id.split("_")[3];
         let dir = e.target.id.split("_")[2];        
         let dateInput = e.target.value;
-        let tempArray = experience;
+        let tempArray = [...experience];
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
         
@@ -211,26 +211,17 @@ function App() {
     const change_experience_tasks = (e) => {
         let num = e.target.id.split("_")[3];
         let tasks = e.target.value;
-        let tempArray = experience;
+        let tempArray = [...experience];
         tasks = tasks.split(", ");
         for(let item of tempArray ) {
             if(item.num == num) {
-               item.tasks= tasks;
-               
+               item.tasks= tasks;               
              }
         } 
         
         setExperience(tempArray);  
     }
    
-
-
-
-    
-
-
-
-
     const change_name = (e) => {
         setGenInfo({           
             name: e.target.value,

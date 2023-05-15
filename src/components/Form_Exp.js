@@ -1,9 +1,6 @@
 import React, {Component} from "react";
 
-const  Form_Exp = (props) => {
-   
-
-   
+const  Form_Exp = (props) => {   
         return(
             <div className="div_form_experience">
                 {props.arrayExperience.map((item) => {
