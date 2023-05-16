@@ -16,323 +16,359 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_CV__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/CV */ "./src/components/CV.js");
 /* harmony import */ var _components_Form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Form */ "./src/components/Form.js");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e2) { throw _e2; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e3) { didErr = true; err = _e3; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-var App = /*#__PURE__*/function (_Component) {
-  _inherits(App, _Component);
-  var _super = _createSuper(App);
-  function App() {
-    var _this;
-    _classCallCheck(this, App);
-    _this = _super.call(this);
-    _this.state = {
-      general_info: {
-        name: "John Doe",
-        email: "johndoe@gmail.com",
-        phone: "+3801122334",
-        summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, cupiditate minima deserunt blanditiis ducimus aliquid, a consectetur cumque porro quidem voluptate provident veritatis, laudantium minus repudiandae expedita magni ut debitis temporibus aperiam ex dolorem omnis repellendus doloribus! Sit totam nam repudiandae, incidunt alias, eius deleniti praesentium corporis inventore ipsa eligendi."
-      },
-      education: [{
-        name_school: "Cool School",
-        title: "WebDev",
-        date: ["2000", "2011"],
-        num: 1
-      }],
-      experience: [{
-        name_company: "HelloGroup",
-        title_position: "CEO",
-        tasks: ["Do 1", "Do 2", "Do 3"],
-        date: ["2015", "2022"],
-        num: 1
-      }],
-      skills: ["Cool", "Funny", "Clever"]
-    };
-    _this.change_name = _this.change_name.bind(_assertThisInitialized(_this));
-    _this.change_email = _this.change_email.bind(_assertThisInitialized(_this));
-    _this.change_phone = _this.change_phone.bind(_assertThisInitialized(_this));
-    _this.change_summary = _this.change_summary.bind(_assertThisInitialized(_this));
-    _this.change_skills = _this.change_skills.bind(_assertThisInitialized(_this));
-    _this.change_education_name = _this.change_education_name.bind(_assertThisInitialized(_this));
-    _this.change_education_title = _this.change_education_title.bind(_assertThisInitialized(_this));
-    _this.change_education_date = _this.change_education_date.bind(_assertThisInitialized(_this));
-    _this.change_experience_name = _this.change_experience_name.bind(_assertThisInitialized(_this));
-    _this.change_experience_title = _this.change_experience_title.bind(_assertThisInitialized(_this));
-    _this.change_experience_date = _this.change_experience_date.bind(_assertThisInitialized(_this));
-    _this.change_experience_tasks = _this.change_experience_tasks.bind(_assertThisInitialized(_this));
-    _this.addFormEdu = _this.addFormEdu.bind(_assertThisInitialized(_this));
-    _this.removeFormEdu = _this.removeFormEdu.bind(_assertThisInitialized(_this));
-    _this.addFormExp = _this.addFormExp.bind(_assertThisInitialized(_this));
-    _this.removeFormExp = _this.removeFormExp.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-  _createClass(App, [{
-    key: "addFormEdu",
-    value: function addFormEdu() {
-      this.setState({
-        education: this.state.education.concat({
-          name_school: "",
-          title: "",
-          date: ["", ""],
-          num: this.state.education[this.state.education.length - 1].num + 1
-        })
-      });
+function App() {
+  var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      name: "John Doe",
+      email: "johndoe@gmail.com",
+      phone: "+3801122334",
+      summary: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Autem, cupiditate minima deserunt blanditiis ducimus aliquid, a consectetur cumque porro quidem voluptate provident veritatis, laudantium minus repudiandae expedita magni ut debitis temporibus aperiam ex dolorem omnis repellendus doloribus! Sit totam nam repudiandae, incidunt alias, eius deleniti praesentium corporis inventore ipsa eligendi."
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    genInfo = _useState2[0],
+    setGenInfo = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+      name_school: "Cool School",
+      title: "WebDev",
+      date: ["2000", "2011"],
+      num: 1
+    }]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    education = _useState4[0],
+    setEducation = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([{
+      name_company: "HelloGroup",
+      title_position: "CEO",
+      tasks: ["Do 1", "Do 2", "Do 3"],
+      date: ["2015", "2022"],
+      num: 1
+    }]),
+    _useState6 = _slicedToArray(_useState5, 2),
+    experience = _useState6[0],
+    setExperience = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(["Cool", "Funny", "Clever"]),
+    _useState8 = _slicedToArray(_useState7, 2),
+    skills = _useState8[0],
+    setSkills = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState10 = _slicedToArray(_useState9, 2),
+    isSubmitted = _useState10[0],
+    setSubmit = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("Submit"),
+    _useState12 = _slicedToArray(_useState11, 2),
+    buttonText = _useState12[0],
+    setButtonText = _useState12[1];
+  var addFormEdu = function addFormEdu() {
+    setEducation(education.concat({
+      name_school: "",
+      title: "",
+      date: ["", ""],
+      num: education[education.length - 1].num + 1
+    }));
+  };
+  var removeFormEdu = function removeFormEdu(e) {
+    var val = e.target.id;
+    var length = val.length;
+    val = val[length - 1];
+    var tempArray = [];
+    var lengthForm = education.length;
+    if (lengthForm > 1) {
+      for (var i = 0; i < lengthForm; i++) {
+        if (val != education[i].num) {
+          tempArray.push(education[i]);
+        }
+      }
+      setEducation(tempArray);
     }
-  }, {
-    key: "removeFormEdu",
-    value: function removeFormEdu(e) {
-      var val = e.target.id;
-      var length = val.length;
-      val = val[length - 1];
-      var tempArray = [];
-      var form_edu_length = this.state.education.length;
-      if (form_edu_length > 1) {
-        for (var i = 0; i < form_edu_length; i++) {
-          if (val != this.state.education[i].num) {
-            tempArray.push(this.state.education[i]);
+  };
+  var change_education_name = function change_education_name(e) {
+    var num = e.target.id.split("_")[3];
+    var tempArray = _toConsumableArray(education);
+    var _iterator = _createForOfIteratorHelper(tempArray),
+      _step;
+    try {
+      for (_iterator.s(); !(_step = _iterator.n()).done;) {
+        var item = _step.value;
+        if (item.num == num) {
+          item.name_school = e.target.value;
+        }
+      }
+    } catch (err) {
+      _iterator.e(err);
+    } finally {
+      _iterator.f();
+    }
+    setEducation(tempArray);
+  };
+  var change_education_title = function change_education_title(e) {
+    var num = e.target.id.split("_")[3];
+    var tempArray = _toConsumableArray(education);
+    var _iterator2 = _createForOfIteratorHelper(tempArray),
+      _step2;
+    try {
+      for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+        var item = _step2.value;
+        if (item.num == num) {
+          item.title = e.target.value;
+        }
+      }
+    } catch (err) {
+      _iterator2.e(err);
+    } finally {
+      _iterator2.f();
+    }
+    setEducation(tempArray);
+  };
+  var change_education_date = function change_education_date(e) {
+    var num = e.target.id.split("_")[3];
+    var dir = e.target.id.split("_")[2];
+    var dateInput = e.target.value;
+    var tempArray = _toConsumableArray(education);
+    var date = new Date(dateInput);
+    var value = monthNames[date.getMonth()] + " " + date.getFullYear();
+    var _iterator3 = _createForOfIteratorHelper(tempArray),
+      _step3;
+    try {
+      for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
+        var item = _step3.value;
+        if (item.num == num) {
+          if (dir == "start") {
+            item.date[0] = value;
+          } else {
+            item.date[1] = value;
           }
         }
-        this.setState({
-          education: tempArray
-        });
       }
+    } catch (err) {
+      _iterator3.e(err);
+    } finally {
+      _iterator3.f();
     }
-  }, {
-    key: "change_education_name",
-    value: function change_education_name(e) {
-      var num = e.target.id.split("_")[3];
-      console.log(num);
-      var tempArray = this.state.education;
-      tempArray[num - 1].name_school = e.target.value;
-      this.setState({
-        education: tempArray
-      });
-    }
-  }, {
-    key: "change_education_title",
-    value: function change_education_title(e) {
-      var num = e.target.id.split("_")[3];
-      console.log(num);
-      var tempArray = this.state.education;
-      tempArray[num - 1].title = e.target.value;
-      this.setState({
-        education: tempArray
-      });
-    }
-  }, {
-    key: "change_education_date",
-    value: function change_education_date(e) {
-      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var num = e.target.id.split("_")[3];
-      var dir = e.target.id.split("_")[2];
-      var tempArray = this.state.education;
-      var dateInput = e.target.value;
-      var date = new Date(dateInput);
-      var value = monthNames[date.getMonth()] + " " + date.getFullYear();
-      if (dir == "start") {
-        tempArray[num - 1].date[0] = value;
-      } else {
-        tempArray[num - 1].date[1] = value;
+    setEducation(tempArray);
+  };
+  var addFormExp = function addFormExp() {
+    setExperience(experience.concat({
+      name_company: "",
+      title_position: "",
+      tasks: [],
+      date: ["", ""],
+      num: experience[experience.length - 1].num + 1
+    }));
+  };
+  var removeFormExp = function removeFormExp(e) {
+    var val = e.target.id;
+    var length = val.length;
+    val = val[length - 1];
+    var tempArray = [];
+    var lengthForm = experience.length;
+    if (lengthForm > 1) {
+      for (var i = 0; i < lengthForm; i++) {
+        if (val != experience[i].num) {
+          tempArray.push(experience[i]);
+        }
       }
-      this.setState({
-        education: tempArray
-      });
+      setExperience(tempArray);
     }
-  }, {
-    key: "addFormExp",
-    value: function addFormExp() {
-      this.setState({
-        experience: this.state.experience.concat({
-          name_company: "",
-          title_position: "",
-          tasks: [],
-          date: ["", ""],
-          num: this.state.experience[this.state.experience.length - 1].num + 1
-        })
-      });
+  };
+  var change_experience_name = function change_experience_name(e) {
+    var num = e.target.id.split("_")[3];
+    var tempArray = _toConsumableArray(experience);
+    var _iterator4 = _createForOfIteratorHelper(tempArray),
+      _step4;
+    try {
+      for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
+        var item = _step4.value;
+        if (item.num == num) {
+          item.name_company = e.target.value;
+        }
+      }
+      //console.log(tempArray[num-1].name_company)
+    } catch (err) {
+      _iterator4.e(err);
+    } finally {
+      _iterator4.f();
     }
-  }, {
-    key: "removeFormExp",
-    value: function removeFormExp(e) {
-      var val = e.target.id;
-      var length = val.length;
-      val = val[length - 1];
-      var tempArray = [];
-      var form_exp_length = this.state.experience.length;
-      if (form_exp_length > 1) {
-        for (var i = 0; i < form_exp_length; i++) {
-          if (val != this.state.experience[i].num) {
-            tempArray.push(this.state.experience[i]);
+    setExperience(tempArray);
+    console.log(experience);
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {});
+  var change_experience_title = function change_experience_title(e) {
+    var num = e.target.id.split("_")[3];
+    var tempArray = _toConsumableArray(experience);
+    var _iterator5 = _createForOfIteratorHelper(tempArray),
+      _step5;
+    try {
+      for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+        var item = _step5.value;
+        if (item.num == num) {
+          item.title_position = e.target.value;
+        }
+      }
+    } catch (err) {
+      _iterator5.e(err);
+    } finally {
+      _iterator5.f();
+    }
+    setExperience(tempArray);
+  };
+  var change_experience_date = function change_experience_date(e) {
+    var num = e.target.id.split("_")[3];
+    var dir = e.target.id.split("_")[2];
+    var dateInput = e.target.value;
+    var tempArray = _toConsumableArray(experience);
+    var date = new Date(dateInput);
+    var value = monthNames[date.getMonth()] + " " + date.getFullYear();
+
+    // for(let item of tempArray ) {
+    //     if(item.num == num) {
+
+    //     }
+    // }
+    var _iterator6 = _createForOfIteratorHelper(tempArray),
+      _step6;
+    try {
+      for (_iterator6.s(); !(_step6 = _iterator6.n()).done;) {
+        var item = _step6.value;
+        if (item.num == num) {
+          if (dir == "start") {
+            item.date[0] = value;
+          } else {
+            item.date[1] = value;
           }
         }
-        this.setState({
-          experience: tempArray
-        });
       }
+    } catch (err) {
+      _iterator6.e(err);
+    } finally {
+      _iterator6.f();
     }
-  }, {
-    key: "change_experience_name",
-    value: function change_experience_name(e) {
-      var num = e.target.id.split("_")[3];
-      console.log(num);
-      var tempArray = this.state.experience;
-      tempArray[num - 1].name_company = e.target.value;
-      this.setState({
-        experience: tempArray
-      });
-    }
-  }, {
-    key: "change_experience_title",
-    value: function change_experience_title(e) {
-      var num = e.target.id.split("_")[3];
-      console.log(num);
-      var tempArray = this.state.experience;
-      tempArray[num - 1].title_position = e.target.value;
-      this.setState({
-        experience: tempArray
-      });
-    }
-  }, {
-    key: "change_experience_date",
-    value: function change_experience_date(e) {
-      var monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-      var num = e.target.id.split("_")[3];
-      var dir = e.target.id.split("_")[2];
-      var tempArray = this.state.experience;
-      var dateInput = e.target.value;
-      var date = new Date(dateInput);
-      var value = monthNames[date.getMonth()] + " " + date.getFullYear();
-      if (dir == "start") {
-        tempArray[num - 1].date[0] = value;
-      } else {
-        tempArray[num - 1].date[1] = value;
+    setExperience(tempArray);
+  };
+  var change_experience_tasks = function change_experience_tasks(e) {
+    var num = e.target.id.split("_")[3];
+    var tasks = e.target.value;
+    var tempArray = _toConsumableArray(experience);
+    tasks = tasks.split(", ");
+    var _iterator7 = _createForOfIteratorHelper(tempArray),
+      _step7;
+    try {
+      for (_iterator7.s(); !(_step7 = _iterator7.n()).done;) {
+        var item = _step7.value;
+        if (item.num == num) {
+          item.tasks = tasks;
+        }
       }
-      this.setState({
-        experience: tempArray
-      });
+    } catch (err) {
+      _iterator7.e(err);
+    } finally {
+      _iterator7.f();
     }
-  }, {
-    key: "change_experience_tasks",
-    value: function change_experience_tasks(e) {
-      var num = e.target.id.split("_")[3];
-      var item = e.target.value;
-      item = item.split(", ");
-      console.log(num);
-      var tempArray = this.state.experience;
-      tempArray[num - 1].tasks = item;
-      console.log(tempArray);
-      this.setState({
-        //experience: tempArray,
-      });
+    setExperience(tempArray);
+  };
+  var change_name = function change_name(e) {
+    setGenInfo({
+      name: e.target.value,
+      email: genInfo.email,
+      phone: genInfo.phone,
+      summary: genInfo.summary
+    });
+  };
+  var change_email = function change_email(e) {
+    setGenInfo({
+      name: genInfo.name,
+      email: e.target.value,
+      phone: genInfo.phone,
+      summary: genInfo.summary
+    });
+  };
+  var change_phone = function change_phone(e) {
+    setGenInfo({
+      name: genInfo.name,
+      email: genInfo.email,
+      phone: e.target.value,
+      summary: genInfo.summary
+    });
+  };
+  var change_summary = function change_summary(e) {
+    setGenInfo({
+      name: genInfo.name,
+      email: genInfo.email,
+      phone: e.target.value,
+      summary: e.target.value
+    });
+  };
+  var change_skills = function change_skills(e) {
+    var item = e.target.value;
+    item = item.split(", ");
+    console.log(item);
+    setSkills(item);
+  };
+  var submitForm = function submitForm() {
+    if (isSubmitted == false) {
+      document.getElementById("form").style.display = "none";
+      setSubmit(true);
+      setButtonText("Edit");
+    } else if (isSubmitted == true) {
+      document.getElementById("form").style.display = "inline";
+      setSubmit(false);
+      setButtonText("Submit");
     }
-  }, {
-    key: "change_name",
-    value: function change_name(e) {
-      this.setState({
-        general_info: {
-          name: e.target.value,
-          email: this.state.general_info.email,
-          phone: this.state.general_info.phone,
-          summary: this.state.general_info.summary
-        }
-      });
+  };
+
+  // test(){
+  //     console.log(1)
+  // }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "app"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "split"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    addFormEdu: addFormEdu,
+    removeFormEdu: removeFormEdu,
+    addFormExp: addFormExp,
+    removeFormExp: removeFormExp,
+    arrayEducation: education,
+    arrayExperience: experience,
+    changeName: change_name,
+    changeEmail: change_email,
+    changePhone: change_phone,
+    changeSummary: change_summary,
+    changeEducationName: change_education_name,
+    changeEducationTitle: change_education_title,
+    changeEducationDate: change_education_date,
+    changeExperienceName: change_experience_name,
+    changeExperienceTitle: change_experience_title,
+    changeExperienceDate: change_experience_date,
+    changeExperienceTasks: change_experience_tasks,
+    changeSkills: change_skills
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_CV__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    data: {
+      general_info: genInfo,
+      skills: skills,
+      experience: experience,
+      education: education
     }
-  }, {
-    key: "change_email",
-    value: function change_email(e) {
-      this.setState({
-        general_info: {
-          name: this.state.general_info.name,
-          email: e.target.value,
-          phone: this.state.general_info.phone,
-          summary: this.state.general_info.summary
-        }
-      });
-    }
-  }, {
-    key: "change_phone",
-    value: function change_phone(e) {
-      this.setState({
-        general_info: {
-          name: this.state.general_info.name,
-          email: this.state.general_info.email,
-          phone: e.target.value,
-          summary: this.state.general_info.summary
-        }
-      });
-    }
-  }, {
-    key: "change_summary",
-    value: function change_summary(e) {
-      this.setState({
-        general_info: {
-          name: this.state.general_info.name,
-          email: this.state.general_info.email,
-          phone: this.state.general_info.phone,
-          summary: e.target.value
-        }
-      });
-    }
-  }, {
-    key: "change_skills",
-    value: function change_skills(e) {
-      var item = e.target.value;
-      item = item.split(", ");
-      console.log(item);
-      this.setState({
-        skills: item
-      });
-    }
-  }, {
-    key: "test",
-    value: function test() {
-      console.log(1);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "split"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Form__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        addFormEdu: this.addFormEdu,
-        removeFormEdu: this.removeFormEdu,
-        addFormExp: this.addFormExp,
-        removeFormExp: this.removeFormExp,
-        arrayEducation: this.state.education,
-        arrayExperience: this.state.experience,
-        changeName: this.change_name,
-        changeEmail: this.change_email,
-        changePhone: this.change_phone,
-        changeSummary: this.change_summary,
-        changeEducationName: this.change_education_name,
-        changeEducationTitle: this.change_education_title,
-        changeEducationDate: this.change_education_date,
-        changeExperienceName: this.change_experience_name,
-        changeExperienceTitle: this.change_experience_title,
-        changeExperienceDate: this.change_experience_date,
-        changeExperienceTasks: this.change_experience_tasks,
-        changeSkills: this.change_skills,
-        test: this.test
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_CV__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        data: this.state
-      }));
-    }
-  }]);
-  return App;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "btn_submit"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: submitForm
+  }, buttonText)));
+}
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 /***/ }),
@@ -353,67 +389,42 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Edu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Edu */ "./src/components/Edu.js");
 /* harmony import */ var _Skills__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Skills */ "./src/components/Skills.js");
 /* harmony import */ var _Info__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Info */ "./src/components/Info.js");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
 
 
-var CV = /*#__PURE__*/function (_Component) {
-  _inherits(CV, _Component);
-  var _super = _createSuper(CV);
-  function CV(props) {
-    _classCallCheck(this, CV);
-    return _super.call(this, props);
-  }
-  _createClass(CV, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "cv"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "cv_left"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "cv_header"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Resume"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "name"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, this.props.data.general_info.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "main_div_details"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Info__WEBPACK_IMPORTED_MODULE_4__["default"], {
-        info: this.props.data.general_info
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "main_div_skills"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Skills"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Skills__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        skills: this.props.data.skills
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "cv_right"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "main_div_summary"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, this.props.data.general_info.summary)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "main_div_experience"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Exp__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        experience: this.props.data.experience
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "main_div_education"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Edu__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        education: this.props.data.education
-      }))));
-    }
-  }]);
-  return CV;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var CV = function CV(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "cv"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "cv_left"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "cv_header"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Resume"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "name"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, props.data.general_info.name))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_div_details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Details"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Info__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    info: props.data.general_info
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_div_skills"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Skills"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Skills__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    skills: props.data.skills
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "cv_right"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_div_summary"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Summary"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, props.data.general_info.summary)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_div_experience"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Exp__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    experience: props.data.experience
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "main_div_education"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Edu__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    education: props.data.education
+  }))));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CV);
 
 /***/ }),
@@ -430,47 +441,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Edu = /*#__PURE__*/function (_Component) {
-  _inherits(Edu, _Component);
-  var _super = _createSuper(Edu);
-  function Edu(props) {
-    _classCallCheck(this, Edu);
-    return _super.call(this, props);
-  }
-  _createClass(Edu, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-        className: "edu"
-      }, this.props.education.map(function (edu) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-          className: "block_ul",
-          key: "edu_" + _this.props.education.indexOf(edu)
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "edu_date cv_date"
-        }, "From ", edu.date[0], " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " To ", edu.date[1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "block_ul_titles"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, edu.name_school), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, edu.title)));
-      }));
-    }
-  }]);
-  return Edu;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Edu = function Edu(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "edu"
+  }, props.education.map(function (edu) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      className: "block_ul",
+      key: "edu_" + props.education.indexOf(edu)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "edu_date cv_date"
+    }, "From ", edu.date[0], " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " To ", edu.date[1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "block_ul_titles"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, edu.name_school), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, edu.title)));
+  }));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edu);
 
 /***/ }),
@@ -487,51 +472,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Exp = /*#__PURE__*/function (_Component) {
-  _inherits(Exp, _Component);
-  var _super = _createSuper(Exp);
-  function Exp(props) {
-    _classCallCheck(this, Exp);
-    return _super.call(this, props);
-  }
-  _createClass(Exp, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-        className: "exp"
-      }, this.props.experience.map(function (exp) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-          key: "exp_" + _this.props.experience.indexOf(exp),
-          className: "exp_block block_ul"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "exp_date cv_date"
-        }, "From ", exp.date[0], " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " To ", exp.date[1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "block_ul_titles"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, exp.name_company), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, exp.title_position), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, exp.tasks.map(function (task) {
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-            key: "exp_task_" + exp.tasks.indexOf(task)
-          }, task);
-        }))));
-      }));
-    }
-  }]);
-  return Exp;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Exp = function Exp(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "exp"
+  }, props.experience.map(function (exp) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      key: "exp_" + props.experience.indexOf(exp),
+      className: "exp_block block_ul"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "exp_date cv_date"
+    }, "From ", exp.date[0], " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), " To ", exp.date[1]), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "block_ul_titles"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, exp.name_company), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, exp.title_position), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", null, exp.tasks.map(function (task) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+        key: "exp_task_" + exp.tasks.indexOf(task)
+      }, task);
+    }))));
+  }));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Exp);
 
 /***/ }),
@@ -550,92 +509,70 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Form_Exp__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Form_Exp */ "./src/components/Form_Exp.js");
 /* harmony import */ var _Form_Edu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Form_Edu */ "./src/components/Form_Edu.js");
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
 
-var Form = /*#__PURE__*/function (_Component) {
-  _inherits(Form, _Component);
-  var _super = _createSuper(Form);
-  function Form(props) {
-    _classCallCheck(this, Form);
-    return _super.call(this, props);
-  }
-  _createClass(Form, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
-        onSubmit: function onSubmit(e) {
-          e.preventDefault();
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
-        id: "general_info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "General info"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        onChange: this.props.changeName,
-        id: "name",
-        type: "text",
-        placeholder: "Enter your name"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        onChange: this.props.changeEmail,
-        placeholder: "Enter your email",
-        type: "email",
-        id: "email"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        onChange: this.props.changePhone,
-        placeholder: "Enter your phone",
-        type: "phone",
-        id: "phone"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
-        onChange: this.props.changeSummary,
-        placeholder: "Enter short summary of yourself",
-        name: "",
-        id: "summary",
-        cols: "20",
-        rows: "3"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
-        id: "skills"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Skills"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-        onChange: this.props.changeSkills,
-        placeholder: "Enter your skills; Seperate by comma and space",
-        type: "text"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
-        id: "experience"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Form_Exp__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        arrayExperience: this.props.arrayExperience,
-        changeExperienceName: this.props.changeExperienceName,
-        changeExperienceTitle: this.props.changeExperienceTitle,
-        changeExperienceDate: this.props.changeExperienceDate,
-        changeExperienceTasks: this.props.changeExperienceTasks,
-        onClick: this.props.removeFormExp
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        onClick: this.props.addFormExp
-      }, "Add")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
-        id: "education"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Form_Edu__WEBPACK_IMPORTED_MODULE_2__["default"], {
-        arrayEducation: this.props.arrayEducation,
-        changeEducationName: this.props.changeEducationName,
-        changeEducationTitle: this.props.changeEducationTitle,
-        changeEducationDate: this.props.changeEducationDate,
-        onClick: this.props.removeFormEdu
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-        onClick: this.props.addFormEdu
-      }, "Add")));
+var Form = function Form(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("form", {
+    id: "form",
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
     }
-  }]);
-  return Form;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
+    id: "general_info"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "General info"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    onChange: props.changeName,
+    id: "name",
+    type: "text",
+    placeholder: "Enter your name"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    onChange: props.changeEmail,
+    placeholder: "Enter your email",
+    type: "email",
+    id: "email"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    onChange: props.changePhone,
+    placeholder: "Enter your phone",
+    type: "phone",
+    id: "phone"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("textarea", {
+    onChange: props.changeSummary,
+    placeholder: "Enter short summary of yourself",
+    name: "",
+    id: "summary",
+    cols: "20",
+    rows: "3"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
+    id: "skills"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Skills"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+    onChange: props.changeSkills,
+    placeholder: "Seperate by comma and space e.g. `Funny, Cool`",
+    type: "text"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
+    id: "experience"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Experience"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Form_Exp__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    arrayExperience: props.arrayExperience,
+    changeExperienceName: props.changeExperienceName,
+    changeExperienceTitle: props.changeExperienceTitle,
+    changeExperienceDate: props.changeExperienceDate,
+    changeExperienceTasks: props.changeExperienceTasks,
+    onClick: props.removeFormExp
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "btn_add",
+    onClick: props.addFormExp
+  }, "Add")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("fieldset", {
+    id: "education"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("legend", null, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Form_Edu__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    arrayEducation: props.arrayEducation,
+    changeEducationName: props.changeEducationName,
+    changeEducationTitle: props.changeEducationTitle,
+    changeEducationDate: props.changeEducationDate,
+    onClick: props.removeFormEdu
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    className: "btn_add",
+    onClick: props.addFormEdu
+  }, "Add")));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form);
 
 /***/ }),
@@ -652,72 +589,47 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Form_Edu = /*#__PURE__*/function (_Component) {
-  _inherits(Form_Edu, _Component);
-  var _super = _createSuper(Form_Edu);
-  function Form_Edu(props) {
-    _classCallCheck(this, Form_Edu);
-    return _super.call(this, props);
-  }
-  _createClass(Form_Edu, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "div_form_education"
-      }, this.props.arrayEducation.map(function (item) {
-        var num = item.num;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "block_form",
-          key: "form_edu_" + num,
-          id: "form_edu_" + num
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeEducationName,
-          placeholder: "Enter name of the school/university/other",
-          id: "form_edu_name_" + num,
-          type: "text"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeEducationTitle,
-          placeholder: "Enter title",
-          id: "form_edu_title_" + num,
-          type: "text"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "dates"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "date"
-        }, "From", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeEducationDate,
-          id: "form_edu_start_" + num,
-          type: "month"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "date"
-        }, "To", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeEducationDate,
-          id: "form_edu_end_" + num,
-          type: "month"
-        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-          id: "form_edu_btn_" + num,
-          onClick: _this.props.onClick
-        }, "Delete"));
-      }));
-    }
-  }]);
-  return Form_Edu;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Form_Edu = function Form_Edu(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "div_form_education"
+  }, props.arrayEducation.map(function (item) {
+    var num = item.num;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "block_form",
+      key: "form_edu_" + num,
+      id: "form_edu_" + num
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeEducationName,
+      placeholder: "Enter name of the school/university/other",
+      id: "form_edu_name_" + num,
+      type: "text"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeEducationTitle,
+      placeholder: "Enter title",
+      id: "form_edu_title_" + num,
+      type: "text"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "dates"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "date"
+    }, "From", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeEducationDate,
+      id: "form_edu_start_" + num,
+      type: "month"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "date"
+    }, "To", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeEducationDate,
+      id: "form_edu_end_" + num,
+      type: "month"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: "btn_del",
+      id: "form_edu_btn_" + num,
+      onClick: props.onClick
+    }, "Delete"));
+  }));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form_Edu);
 
 /***/ }),
@@ -734,77 +646,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Form_Exp = /*#__PURE__*/function (_Component) {
-  _inherits(Form_Exp, _Component);
-  var _super = _createSuper(Form_Exp);
-  function Form_Exp(props) {
-    _classCallCheck(this, Form_Exp);
-    return _super.call(this, props);
-  }
-  _createClass(Form_Exp, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "div_form_experience"
-      }, this.props.arrayExperience.map(function (item) {
-        var num = item.num;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "block_form",
-          key: "form_exp_" + num,
-          id: "form_exp_" + num
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeExperienceName,
-          placeholder: "Enter name of the company",
-          id: "form_exp_name_" + num,
-          type: "text"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeExperienceTitle,
-          placeholder: "Enter title of your job",
-          id: "form_exp_title_" + num,
-          type: "text"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "dates"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "date"
-        }, "From", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeExperienceDate,
-          id: "form_exp_start_" + num,
-          type: "month"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-          className: "date"
-        }, "To", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeExperienceDate,
-          id: "form_exp_end_" + num,
-          type: "month"
-        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
-          onChange: _this.props.changeExperienceTasks,
-          placeholder: "Enter some of your tasks that you had from your position. Seperate them with comma and space e.g. 'Create, Build, Find'",
-          id: "form_exp_taks_" + num,
-          type: "text"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
-          id: "form_exp_btn_" + num,
-          onClick: _this.props.onClick
-        }, "Delete"));
-      }));
-    }
-  }]);
-  return Form_Exp;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Form_Exp = function Form_Exp(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "div_form_experience"
+  }, props.arrayExperience.map(function (item) {
+    var num = item.num;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "block_form",
+      key: "form_exp_" + num,
+      id: "form_exp_" + num
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeExperienceName,
+      placeholder: "Enter name of the company",
+      id: "form_exp_name_" + num,
+      type: "text"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeExperienceTitle,
+      placeholder: "Enter title of your job",
+      id: "form_exp_title_" + num,
+      type: "text"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "dates"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "date"
+    }, "From", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeExperienceDate,
+      id: "form_exp_start_" + num,
+      type: "month"
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "date"
+    }, "To", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeExperienceDate,
+      id: "form_exp_end_" + num,
+      type: "month"
+    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("input", {
+      onChange: props.changeExperienceTasks,
+      placeholder: "Seperate by comma and space e.g. `Create, Build`",
+      id: "form_exp_taks_" + num,
+      type: "text"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+      className: "btn_del",
+      id: "form_exp_btn_" + num,
+      onClick: props.onClick
+    }, "Delete"));
+  }));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Form_Exp);
 
 /***/ }),
@@ -821,37 +708,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Info = /*#__PURE__*/function (_Component) {
-  _inherits(Info, _Component);
-  var _super = _createSuper(Info);
-  function Info(props) {
-    _classCallCheck(this, Info);
-    return _super.call(this, props);
-  }
-  _createClass(Info, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-        className: "phone-email"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, this.props.info.phone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, this.props.info.email)));
-    }
-  }]);
-  return Info;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Info = function Info(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "phone-email"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Phone number"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, props.info.phone)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, "Email"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", null, props.info.email)));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Info);
 
 /***/ }),
@@ -868,42 +730,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, _toPropertyKey(descriptor.key), descriptor); } }
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
-function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
-function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); Object.defineProperty(subClass, "prototype", { writable: false }); if (superClass) _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-var Skills = /*#__PURE__*/function (_Component) {
-  _inherits(Skills, _Component);
-  var _super = _createSuper(Skills);
-  function Skills(props) {
-    _classCallCheck(this, Skills);
-    return _super.call(this, props);
-  }
-  _createClass(Skills, [{
-    key: "render",
-    value: function render() {
-      var _this = this;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
-        className: "skills"
-      }, this.props.skills.map(function (skill) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
-          key: "skill_" + _this.props.skills.indexOf(skill)
-        }, skill);
-      }));
-    }
-  }]);
-  return Skills;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+var Skills = function Skills(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("ul", {
+    className: "skills"
+  }, props.skills.map(function (skill) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("li", {
+      key: "skill_" + props.skills.indexOf(skill)
+    }, skill);
+  }));
+};
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Skills);
 
 /***/ }),
@@ -927,7 +763,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/\r\n\r\n/* Remove all the styles of the \"User-Agent-Stylesheet\", except for the 'display' property */\r\n*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {\r\n    all: unset;\r\n    display: revert;\r\n  }\r\n  \r\n  /* Preferred box-sizing value */\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  /*\r\n    Remove list styles (bullets/numbers)\r\n    in case you use it with normalize.css\r\n  */\r\n  ol, ul {\r\n    list-style: none;\r\n  }\r\n  \r\n  /* For images to not be able to exceed their container */\r\n  img {\r\n    display: block;\r\n    max-width: 100%;\r\n  }\r\n  \r\n  /* Removes spacing between cells in tables */\r\n  table {\r\n    border-collapse: collapse;\r\n  }\r\n  \r\n  /* Revert the 'white-space' property for textarea elements on Safari */\r\n  textarea {\r\n    white-space: revert;\r\n  }\r\n/*-------------------------------------------------------------------------------------*/\r\n\r\n:root {\r\n\r\n  --ff-main: 'Inter', sans-serif;\r\n\r\n  --clr-primary: rgb(25, 167, 206);\r\n  --clr-secondary: rgb(20, 108, 148);\r\n  --clr-light: rgb(175, 211, 226);\r\n  --clr-accent: rgb(246, 241, 241);\r\n\r\n\r\n  --fs-default: 1.125rem;\r\n  --fs-medium: calc(var(--fs-default) * 1.3);\r\n  --fs-big: calc(var(--fs-default) * 2);\r\n\r\n}\r\n\r\n\r\nbody {\r\n  font-family: var(--ff-main)\r\n}\r\n\r\n\r\n.split,main,.dates {\r\n  display: flex;\r\n  justify-content: center;\r\n\r\n}\r\n\r\n\r\n.split {\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  gap: 1rem;\r\n}\r\n\r\n\r\ninput, textarea {\r\n  border-bottom: 1px solid black;\r\n  margin-block: .5rem;\r\n}\r\n\r\nform {\r\n  padding: 1rem;\r\n}\r\n\r\nfieldset {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border:  1px dashed grey;\r\n  padding: 1rem;\r\n  margin-block: 1rem;    \r\n}\r\n\r\n\r\n.block_form {\r\n  margin-block: 1rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.cv {\r\n  display: flex;\r\n  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n  overflow: hidden;\r\n  height: min-content;  \r\n}\r\n\r\n.cv_left {\r\n  color: var(--clr-accent);\r\n  background-color: var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  background-color: var(--clr-accent);\r\n}\r\n\r\nh1 {\r\n  font-size: var(--fs-medium);\r\n  margin-block: 1rem 1.5rem;\r\n  text-transform: uppercase;\r\n}\r\n\r\nli {\r\n  text-transform: capitalize;\r\n}\r\n\r\n .cv_left, .cv_right {\r\n  padding: 2rem 2rem 5rem 2rem;\r\n}\r\n\r\n.cv_left {\r\n  min-width: 14rem;\r\n}\r\n.cv_left h1:not(.cv_header h1) {\r\n  color: var(--clr-accent);\r\n  border-bottom: 3px solid var(--clr-accent);\r\n}\r\n\r\n.cv_right h1 {\r\n  color: var(--clr-primary);\r\n  border-bottom: 3px solid var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  padding-top: 9rem;\r\n  width: 30rem;\r\n}\r\n\r\n.cv_right p {\r\n  opacity: .7;\r\n}\r\n\r\n.cv_header {\r\n    color: var(--clr-accent);\r\n    position: relative;   \r\n}\r\n\r\n.cv_header h1:first-child {\r\n  margin-bottom: 5rem;\r\n}\r\n\r\n\r\n.block_ul {\r\n  display: flex;\r\n  gap: 2rem;\r\n}\r\n\r\n.cv_date, .block_ul_titles  h2:first-child {\r\n  font-weight: 700;\r\n}\r\n\r\n.cv_date {\r\n  line-height: 1.5;\r\n}\r\n\r\n.block_ul_titles  h2:not(:first-child){\r\n      opacity: .7;\r\n}\r\n\r\n.block_ul_titles h2 {\r\n  margin-bottom: .5rem;\r\n}\r\n\r\nlegend {\r\n  font-weight: 800;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n}\r\n\r\n\r\n.name {\r\n  position: absolute;\r\n  top: 100%;\r\n  left: -22%;\r\n  color: black !important;\r\n  text-align: left;\r\n  white-space: nowrap;\r\n  padding-inline: 3rem 125%;\r\n  padding-block: 1rem;\r\n  background-color: var(--clr-accent);  \r\n}\r\n\r\n.name h1 {\r\n    font-size: var(--fs-big);\r\n  margin: 0 !important; \r\n  padding: 0;\r\n}\r\n\r\n.phone-email h2{\r\n  line-height: 1.5;\r\n}\r\n\r\n.phone-email h3{\r\n opacity: .7;\r\n}\r\n\r\n.phone-email > * {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\nul {\r\n  list-style: disc;\r\n}\r\n\r\n.skills li,.block_ul_titles  ul li {\r\n  opacity: .7;\r\n  margin-block: .5rem;\r\n  margin-left: 1.5rem;\r\n}\r\n\r\n.main_div_summary p {\r\n  word-wrap: break-word;\r\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA,mEAAmE;;AAEnE,4FAA4F;AAC5F;IACI,UAAU;IACV,eAAe;EACjB;;EAEA,+BAA+B;EAC/B;;;IAGE,sBAAsB;EACxB;;EAEA;;;GAGC;EACD;IACE,gBAAgB;EAClB;;EAEA,wDAAwD;EACxD;IACE,cAAc;IACd,eAAe;EACjB;;EAEA,4CAA4C;EAC5C;IACE,yBAAyB;EAC3B;;EAEA,sEAAsE;EACtE;IACE,mBAAmB;EACrB;AACF,wFAAwF;;AAExF;;EAEE,8BAA8B;;EAE9B,gCAAgC;EAChC,kCAAkC;EAClC,+BAA+B;EAC/B,gCAAgC;;;EAGhC,sBAAsB;EACtB,0CAA0C;EAC1C,qCAAqC;;AAEvC;;;AAGA;EACE;AACF;;;AAGA;EACE,aAAa;EACb,uBAAuB;;AAEzB;;;AAGA;EACE,mBAAmB;EACnB,uBAAuB;EACvB,SAAS;AACX;;;AAGA;EACE,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,wBAAwB;EACxB,aAAa;EACb,kBAAkB;AACpB;;;AAGA;EACE,kBAAkB;EAClB,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,4CAA4C;EAC5C,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;EACxB,oCAAoC;AACtC;;AAEA;EACE,mCAAmC;AACrC;;AAEA;EACE,2BAA2B;EAC3B,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,0BAA0B;AAC5B;;CAEC;EACC,4BAA4B;AAC9B;;AAEA;EACE,gBAAgB;AAClB;AACA;EACE,wBAAwB;EACxB,0CAA0C;AAC5C;;AAEA;EACE,yBAAyB;EACzB,2CAA2C;AAC7C;;AAEA;EACE,iBAAiB;EACjB,YAAY;AACd;;AAEA;EACE,WAAW;AACb;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;AACtB;;AAEA;EACE,mBAAmB;AACrB;;;AAGA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;MACM,WAAW;AACjB;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,gBAAgB;EAChB,yBAAyB;EACzB,qBAAqB;AACvB;;;AAGA;EACE,kBAAkB;EAClB,SAAS;EACT,UAAU;EACV,uBAAuB;EACvB,gBAAgB;EAChB,mBAAmB;EACnB,yBAAyB;EACzB,mBAAmB;EACnB,mCAAmC;AACrC;;AAEA;IACI,wBAAwB;EAC1B,oBAAoB;EACpB,UAAU;AACZ;;AAEA;EACE,gBAAgB;AAClB;;AAEA;CACC,WAAW;AACZ;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,mBAAmB;EACnB,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;AACvB","sourcesContent":["/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/\r\n\r\n/* Remove all the styles of the \"User-Agent-Stylesheet\", except for the 'display' property */\r\n*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {\r\n    all: unset;\r\n    display: revert;\r\n  }\r\n  \r\n  /* Preferred box-sizing value */\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  /*\r\n    Remove list styles (bullets/numbers)\r\n    in case you use it with normalize.css\r\n  */\r\n  ol, ul {\r\n    list-style: none;\r\n  }\r\n  \r\n  /* For images to not be able to exceed their container */\r\n  img {\r\n    display: block;\r\n    max-width: 100%;\r\n  }\r\n  \r\n  /* Removes spacing between cells in tables */\r\n  table {\r\n    border-collapse: collapse;\r\n  }\r\n  \r\n  /* Revert the 'white-space' property for textarea elements on Safari */\r\n  textarea {\r\n    white-space: revert;\r\n  }\r\n/*-------------------------------------------------------------------------------------*/\r\n\r\n:root {\r\n\r\n  --ff-main: 'Inter', sans-serif;\r\n\r\n  --clr-primary: rgb(25, 167, 206);\r\n  --clr-secondary: rgb(20, 108, 148);\r\n  --clr-light: rgb(175, 211, 226);\r\n  --clr-accent: rgb(246, 241, 241);\r\n\r\n\r\n  --fs-default: 1.125rem;\r\n  --fs-medium: calc(var(--fs-default) * 1.3);\r\n  --fs-big: calc(var(--fs-default) * 2);\r\n\r\n}\r\n\r\n\r\nbody {\r\n  font-family: var(--ff-main)\r\n}\r\n\r\n\r\n.split,main,.dates {\r\n  display: flex;\r\n  justify-content: center;\r\n\r\n}\r\n\r\n\r\n.split {\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  gap: 1rem;\r\n}\r\n\r\n\r\ninput, textarea {\r\n  border-bottom: 1px solid black;\r\n  margin-block: .5rem;\r\n}\r\n\r\nform {\r\n  padding: 1rem;\r\n}\r\n\r\nfieldset {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border:  1px dashed grey;\r\n  padding: 1rem;\r\n  margin-block: 1rem;    \r\n}\r\n\r\n\r\n.block_form {\r\n  margin-block: 1rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.cv {\r\n  display: flex;\r\n  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n  overflow: hidden;\r\n  height: min-content;  \r\n}\r\n\r\n.cv_left {\r\n  color: var(--clr-accent);\r\n  background-color: var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  background-color: var(--clr-accent);\r\n}\r\n\r\nh1 {\r\n  font-size: var(--fs-medium);\r\n  margin-block: 1rem 1.5rem;\r\n  text-transform: uppercase;\r\n}\r\n\r\nli {\r\n  text-transform: capitalize;\r\n}\r\n\r\n .cv_left, .cv_right {\r\n  padding: 2rem 2rem 5rem 2rem;\r\n}\r\n\r\n.cv_left {\r\n  min-width: 14rem;\r\n}\r\n.cv_left h1:not(.cv_header h1) {\r\n  color: var(--clr-accent);\r\n  border-bottom: 3px solid var(--clr-accent);\r\n}\r\n\r\n.cv_right h1 {\r\n  color: var(--clr-primary);\r\n  border-bottom: 3px solid var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  padding-top: 9rem;\r\n  width: 30rem;\r\n}\r\n\r\n.cv_right p {\r\n  opacity: .7;\r\n}\r\n\r\n.cv_header {\r\n    color: var(--clr-accent);\r\n    position: relative;   \r\n}\r\n\r\n.cv_header h1:first-child {\r\n  margin-bottom: 5rem;\r\n}\r\n\r\n\r\n.block_ul {\r\n  display: flex;\r\n  gap: 2rem;\r\n}\r\n\r\n.cv_date, .block_ul_titles  h2:first-child {\r\n  font-weight: 700;\r\n}\r\n\r\n.cv_date {\r\n  line-height: 1.5;\r\n}\r\n\r\n.block_ul_titles  h2:not(:first-child){\r\n      opacity: .7;\r\n}\r\n\r\n.block_ul_titles h2 {\r\n  margin-bottom: .5rem;\r\n}\r\n\r\nlegend {\r\n  font-weight: 800;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n}\r\n\r\n\r\n.name {\r\n  position: absolute;\r\n  top: 100%;\r\n  left: -22%;\r\n  color: black !important;\r\n  text-align: left;\r\n  white-space: nowrap;\r\n  padding-inline: 3rem 125%;\r\n  padding-block: 1rem;\r\n  background-color: var(--clr-accent);  \r\n}\r\n\r\n.name h1 {\r\n    font-size: var(--fs-big);\r\n  margin: 0 !important; \r\n  padding: 0;\r\n}\r\n\r\n.phone-email h2{\r\n  line-height: 1.5;\r\n}\r\n\r\n.phone-email h3{\r\n opacity: .7;\r\n}\r\n\r\n.phone-email > * {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\nul {\r\n  list-style: disc;\r\n}\r\n\r\n.skills li,.block_ul_titles  ul li {\r\n  opacity: .7;\r\n  margin-block: .5rem;\r\n  margin-left: 1.5rem;\r\n}\r\n\r\n.main_div_summary p {\r\n  word-wrap: break-word;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/\r\n\r\n/* Remove all the styles of the \"User-Agent-Stylesheet\", except for the 'display' property */\r\n*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {\r\n    all: unset;\r\n    display: revert;\r\n  }\r\n  \r\n  /* Preferred box-sizing value */\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  /*\r\n    Remove list styles (bullets/numbers)\r\n    in case you use it with normalize.css\r\n  */\r\n  ol, ul {\r\n    list-style: none;\r\n  }\r\n  \r\n  /* For images to not be able to exceed their container */\r\n  img {\r\n    display: block;\r\n    max-width: 100%;\r\n  }\r\n  \r\n  /* Removes spacing between cells in tables */\r\n  table {\r\n    border-collapse: collapse;\r\n  }\r\n  \r\n  /* Revert the 'white-space' property for textarea elements on Safari */\r\n  textarea {\r\n    white-space: revert;\r\n  }\r\n/*-------------------------------------------------------------------------------------*/\r\n\r\n:root {\r\n\r\n  --ff-main: 'Inter', sans-serif;\r\n\r\n  --clr-primary: rgb(25, 167, 206);\r\n  --clr-secondary: rgb(20, 108, 148);\r\n  --clr-light: rgb(175, 211, 226);\r\n  --clr-accent: rgb(246, 241, 241);\r\n\r\n\r\n  --fs-default: 1.125rem;\r\n  --fs-medium: calc(var(--fs-default) * 1.3);\r\n  --fs-big: calc(var(--fs-default) * 2);\r\n\r\n}\r\n\r\n\r\nbody {\r\n  font-family: var(--ff-main)\r\n}\r\n\r\n\r\n.split,main,.dates {\r\n  display: flex;\r\n  justify-content: center;\r\n\r\n}\r\n\r\n\r\n.split {\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  gap: 1rem;\r\n}\r\n\r\n\r\ninput, textarea {\r\n  border-bottom: 1px solid black;\r\n  margin-block: .5rem;\r\n}\r\n\r\nform {\r\n  padding: 1rem;\r\n}\r\n\r\nfieldset {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border:  1px dashed grey;\r\n  padding: 1rem;\r\n  margin-block: 1rem;    \r\n}\r\n\r\n\r\n.block_form {\r\n  margin-block: 1rem 2rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.cv {\r\n  display: flex;\r\n  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n  overflow: hidden;\r\n  height: min-content;  \r\n}\r\n\r\n.cv_left {\r\n  color: var(--clr-accent);\r\n  background-color: var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  background-color: var(--clr-accent);\r\n}\r\n\r\nh1 {\r\n  font-size: var(--fs-medium);\r\n  margin-block: 1rem 1.5rem;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.skills li {\r\n  text-transform: uppercase;\r\n}\r\n\r\n .cv_left, .cv_right {\r\n  padding: 2rem 2rem 5rem 2rem;\r\n}\r\n\r\n.cv_left {\r\n  min-width: 14rem;\r\n}\r\n.cv_left h1:not(.cv_header h1) {\r\n  color: var(--clr-accent);\r\n  border-bottom: 3px solid var(--clr-accent);\r\n}\r\n\r\n.cv_right h1 {\r\n  color: var(--clr-primary);\r\n  border-bottom: 3px solid var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  padding-top: 9rem;\r\n  width: 30rem;\r\n}\r\n\r\n.cv_right p {\r\n  opacity: .7;\r\n}\r\n\r\n.cv_header {\r\n    color: var(--clr-accent);\r\n    position: relative;   \r\n}\r\n\r\n.cv_header h1:first-child {\r\n  margin-bottom: 5rem;\r\n}\r\n\r\n\r\n.block_ul {\r\n  display: flex; \r\n  margin-bottom: 2rem;\r\n  gap: 5rem;\r\n}\r\n\r\n\r\n\r\n.cv_date, .block_ul_titles  h2:first-child {\r\n  font-weight: 700;\r\n}\r\n\r\n.cv_date {\r\n  line-height: 1.5;\r\n}\r\n\r\n.block_ul_titles  h2:not(:first-child){\r\n      opacity: .7;\r\n}\r\n\r\n.block_ul_titles h2 {\r\n  margin-bottom: .5rem;\r\n}\r\n\r\nlegend {\r\n  font-weight: 800;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n}\r\n\r\n\r\n.name {\r\n  position: absolute;\r\n  top: 100%;\r\n  left: -22%;\r\n  color: black !important;\r\n  text-align: left;\r\n  white-space: nowrap;\r\n  padding-inline: 3rem 125%;\r\n  padding-block: 1rem;\r\n  background-color: var(--clr-accent);  \r\n}\r\n\r\n.name h1 {\r\n    font-size: var(--fs-big);\r\n  margin: 0 !important; \r\n  padding: 0;\r\n}\r\n\r\n.phone-email h2{\r\n  line-height: 1.5;\r\n}\r\n\r\n.phone-email h3{\r\n opacity: .7;\r\n}\r\n\r\n.phone-email > * {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\nul {\r\n  list-style: disc;\r\n}\r\n\r\n.skills li,.block_ul_titles  ul li {\r\n  opacity: .7;\r\n  margin-block: .5rem;\r\n  margin-left: 1.5rem;\r\n}\r\n\r\n.main_div_summary p {\r\n  word-wrap: break-word;\r\n}\r\n\r\nheader {\r\n  background-color: var(--clr-secondary);\r\n  \r\n}\r\ninput {\r\n  line-height: 2;\r\n}\r\n\r\nheader h1 {\r\n  margin: 0 0 5rem 0;\r\n  padding: 1rem 3rem;\r\n  color: var(--clr-accent);\r\n  font-style: italic;\r\n}\r\n\r\n\r\n.btn_add, .btn_del {\r\n  \r\n  width: 5rem;\r\n  width: min-content;  \r\n  transition: all .5s ease;\r\n}\r\n\r\n\r\n.btn_add {\r\n  margin-inline: auto;\r\n  color: green;\r\n}\r\n\r\n.btn_del {\r\n  color: red;\r\n  padding:.5rem 1rem;\r\n  letter-spacing: .3rem;\r\n}\r\n\r\n\r\n.btn_add:hover, .btn_del:hover {\r\n  border-radius: 5rem ;\r\n\r\n}\r\n\r\n.btn_add:hover {  \r\n  padding: 1rem 3rem;\r\n  cursor: pointer;\r\n  background-color: green;\r\n  color: white;\r\n}\r\n\r\n\r\n.btn_del:hover {  \r\n  cursor: pointer;\r\n  background-color: red; \r\n  color: white;\r\n}\r\n\r\n\r\n.btn_submit {\r\n  padding: 5rem;\r\n  text-align: center;\r\n}\r\n\r\n.btn_submit button {\r\n  transition: all .5s ease; \r\n  padding: 1rem 3rem; \r\n  border-radius: 5rem;\r\n\r\n\r\n}\r\n\r\n.btn_submit button:hover {\r\n  color: white;\r\n  cursor: pointer;  \r\n  letter-spacing: 1.5rem;\r\n  background-color: var(--clr-secondary);\r\n  transition: all .5s ease;  \r\n\r\n}", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAAA,mEAAmE;;AAEnE,4FAA4F;AAC5F;IACI,UAAU;IACV,eAAe;EACjB;;EAEA,+BAA+B;EAC/B;;;IAGE,sBAAsB;EACxB;;EAEA;;;GAGC;EACD;IACE,gBAAgB;EAClB;;EAEA,wDAAwD;EACxD;IACE,cAAc;IACd,eAAe;EACjB;;EAEA,4CAA4C;EAC5C;IACE,yBAAyB;EAC3B;;EAEA,sEAAsE;EACtE;IACE,mBAAmB;EACrB;AACF,wFAAwF;;AAExF;;EAEE,8BAA8B;;EAE9B,gCAAgC;EAChC,kCAAkC;EAClC,+BAA+B;EAC/B,gCAAgC;;;EAGhC,sBAAsB;EACtB,0CAA0C;EAC1C,qCAAqC;;AAEvC;;;AAGA;EACE;AACF;;;AAGA;EACE,aAAa;EACb,uBAAuB;;AAEzB;;;AAGA;EACE,mBAAmB;EACnB,uBAAuB;EACvB,SAAS;AACX;;;AAGA;EACE,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,aAAa;EACb,sBAAsB;EACtB,wBAAwB;EACxB,aAAa;EACb,kBAAkB;AACpB;;;AAGA;EACE,uBAAuB;EACvB,aAAa;EACb,sBAAsB;AACxB;;AAEA;EACE,aAAa;EACb,4CAA4C;EAC5C,gBAAgB;EAChB,mBAAmB;AACrB;;AAEA;EACE,wBAAwB;EACxB,oCAAoC;AACtC;;AAEA;EACE,mCAAmC;AACrC;;AAEA;EACE,2BAA2B;EAC3B,yBAAyB;EACzB,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;AAC3B;;CAEC;EACC,4BAA4B;AAC9B;;AAEA;EACE,gBAAgB;AAClB;AACA;EACE,wBAAwB;EACxB,0CAA0C;AAC5C;;AAEA;EACE,yBAAyB;EACzB,2CAA2C;AAC7C;;AAEA;EACE,iBAAiB;EACjB,YAAY;AACd;;AAEA;EACE,WAAW;AACb;;AAEA;IACI,wBAAwB;IACxB,kBAAkB;AACtB;;AAEA;EACE,mBAAmB;AACrB;;;AAGA;EACE,aAAa;EACb,mBAAmB;EACnB,SAAS;AACX;;;;AAIA;EACE,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;MACM,WAAW;AACjB;;AAEA;EACE,oBAAoB;AACtB;;AAEA;EACE,gBAAgB;EAChB,yBAAyB;EACzB,qBAAqB;AACvB;;;AAGA;EACE,kBAAkB;EAClB,SAAS;EACT,UAAU;EACV,uBAAuB;EACvB,gBAAgB;EAChB,mBAAmB;EACnB,yBAAyB;EACzB,mBAAmB;EACnB,mCAAmC;AACrC;;AAEA;IACI,wBAAwB;EAC1B,oBAAoB;EACpB,UAAU;AACZ;;AAEA;EACE,gBAAgB;AAClB;;AAEA;CACC,WAAW;AACZ;;AAEA;EACE,mBAAmB;AACrB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,WAAW;EACX,mBAAmB;EACnB,mBAAmB;AACrB;;AAEA;EACE,qBAAqB;AACvB;;AAEA;EACE,sCAAsC;;AAExC;AACA;EACE,cAAc;AAChB;;AAEA;EACE,kBAAkB;EAClB,kBAAkB;EAClB,wBAAwB;EACxB,kBAAkB;AACpB;;;AAGA;;EAEE,WAAW;EACX,kBAAkB;EAClB,wBAAwB;AAC1B;;;AAGA;EACE,mBAAmB;EACnB,YAAY;AACd;;AAEA;EACE,UAAU;EACV,kBAAkB;EAClB,qBAAqB;AACvB;;;AAGA;EACE,oBAAoB;;AAEtB;;AAEA;EACE,kBAAkB;EAClB,eAAe;EACf,uBAAuB;EACvB,YAAY;AACd;;;AAGA;EACE,eAAe;EACf,qBAAqB;EACrB,YAAY;AACd;;;AAGA;EACE,aAAa;EACb,kBAAkB;AACpB;;AAEA;EACE,wBAAwB;EACxB,kBAAkB;EAClB,mBAAmB;;;AAGrB;;AAEA;EACE,YAAY;EACZ,eAAe;EACf,sBAAsB;EACtB,sCAAsC;EACtC,wBAAwB;;AAE1B","sourcesContent":["/*** The new CSS Reset - version 1.2.0 (last updated 23.7.2021) ***/\r\n\r\n/* Remove all the styles of the \"User-Agent-Stylesheet\", except for the 'display' property */\r\n*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {\r\n    all: unset;\r\n    display: revert;\r\n  }\r\n  \r\n  /* Preferred box-sizing value */\r\n  *,\r\n  *::before,\r\n  *::after {\r\n    box-sizing: border-box;\r\n  }\r\n  \r\n  /*\r\n    Remove list styles (bullets/numbers)\r\n    in case you use it with normalize.css\r\n  */\r\n  ol, ul {\r\n    list-style: none;\r\n  }\r\n  \r\n  /* For images to not be able to exceed their container */\r\n  img {\r\n    display: block;\r\n    max-width: 100%;\r\n  }\r\n  \r\n  /* Removes spacing between cells in tables */\r\n  table {\r\n    border-collapse: collapse;\r\n  }\r\n  \r\n  /* Revert the 'white-space' property for textarea elements on Safari */\r\n  textarea {\r\n    white-space: revert;\r\n  }\r\n/*-------------------------------------------------------------------------------------*/\r\n\r\n:root {\r\n\r\n  --ff-main: 'Inter', sans-serif;\r\n\r\n  --clr-primary: rgb(25, 167, 206);\r\n  --clr-secondary: rgb(20, 108, 148);\r\n  --clr-light: rgb(175, 211, 226);\r\n  --clr-accent: rgb(246, 241, 241);\r\n\r\n\r\n  --fs-default: 1.125rem;\r\n  --fs-medium: calc(var(--fs-default) * 1.3);\r\n  --fs-big: calc(var(--fs-default) * 2);\r\n\r\n}\r\n\r\n\r\nbody {\r\n  font-family: var(--ff-main)\r\n}\r\n\r\n\r\n.split,main,.dates {\r\n  display: flex;\r\n  justify-content: center;\r\n\r\n}\r\n\r\n\r\n.split {\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  gap: 1rem;\r\n}\r\n\r\n\r\ninput, textarea {\r\n  border-bottom: 1px solid black;\r\n  margin-block: .5rem;\r\n}\r\n\r\nform {\r\n  padding: 1rem;\r\n}\r\n\r\nfieldset {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border:  1px dashed grey;\r\n  padding: 1rem;\r\n  margin-block: 1rem;    \r\n}\r\n\r\n\r\n.block_form {\r\n  margin-block: 1rem 2rem;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.cv {\r\n  display: flex;\r\n  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;\r\n  overflow: hidden;\r\n  height: min-content;  \r\n}\r\n\r\n.cv_left {\r\n  color: var(--clr-accent);\r\n  background-color: var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  background-color: var(--clr-accent);\r\n}\r\n\r\nh1 {\r\n  font-size: var(--fs-medium);\r\n  margin-block: 1rem 1.5rem;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.skills li {\r\n  text-transform: uppercase;\r\n}\r\n\r\n .cv_left, .cv_right {\r\n  padding: 2rem 2rem 5rem 2rem;\r\n}\r\n\r\n.cv_left {\r\n  min-width: 14rem;\r\n}\r\n.cv_left h1:not(.cv_header h1) {\r\n  color: var(--clr-accent);\r\n  border-bottom: 3px solid var(--clr-accent);\r\n}\r\n\r\n.cv_right h1 {\r\n  color: var(--clr-primary);\r\n  border-bottom: 3px solid var(--clr-primary);\r\n}\r\n\r\n.cv_right {\r\n  padding-top: 9rem;\r\n  width: 30rem;\r\n}\r\n\r\n.cv_right p {\r\n  opacity: .7;\r\n}\r\n\r\n.cv_header {\r\n    color: var(--clr-accent);\r\n    position: relative;   \r\n}\r\n\r\n.cv_header h1:first-child {\r\n  margin-bottom: 5rem;\r\n}\r\n\r\n\r\n.block_ul {\r\n  display: flex; \r\n  margin-bottom: 2rem;\r\n  gap: 5rem;\r\n}\r\n\r\n\r\n\r\n.cv_date, .block_ul_titles  h2:first-child {\r\n  font-weight: 700;\r\n}\r\n\r\n.cv_date {\r\n  line-height: 1.5;\r\n}\r\n\r\n.block_ul_titles  h2:not(:first-child){\r\n      opacity: .7;\r\n}\r\n\r\n.block_ul_titles h2 {\r\n  margin-bottom: .5rem;\r\n}\r\n\r\nlegend {\r\n  font-weight: 800;\r\n  text-transform: uppercase;\r\n  letter-spacing: .1rem;\r\n}\r\n\r\n\r\n.name {\r\n  position: absolute;\r\n  top: 100%;\r\n  left: -22%;\r\n  color: black !important;\r\n  text-align: left;\r\n  white-space: nowrap;\r\n  padding-inline: 3rem 125%;\r\n  padding-block: 1rem;\r\n  background-color: var(--clr-accent);  \r\n}\r\n\r\n.name h1 {\r\n    font-size: var(--fs-big);\r\n  margin: 0 !important; \r\n  padding: 0;\r\n}\r\n\r\n.phone-email h2{\r\n  line-height: 1.5;\r\n}\r\n\r\n.phone-email h3{\r\n opacity: .7;\r\n}\r\n\r\n.phone-email > * {\r\n  margin-bottom: 1rem;\r\n}\r\n\r\nul {\r\n  list-style: disc;\r\n}\r\n\r\n.skills li,.block_ul_titles  ul li {\r\n  opacity: .7;\r\n  margin-block: .5rem;\r\n  margin-left: 1.5rem;\r\n}\r\n\r\n.main_div_summary p {\r\n  word-wrap: break-word;\r\n}\r\n\r\nheader {\r\n  background-color: var(--clr-secondary);\r\n  \r\n}\r\ninput {\r\n  line-height: 2;\r\n}\r\n\r\nheader h1 {\r\n  margin: 0 0 5rem 0;\r\n  padding: 1rem 3rem;\r\n  color: var(--clr-accent);\r\n  font-style: italic;\r\n}\r\n\r\n\r\n.btn_add, .btn_del {\r\n  \r\n  width: 5rem;\r\n  width: min-content;  \r\n  transition: all .5s ease;\r\n}\r\n\r\n\r\n.btn_add {\r\n  margin-inline: auto;\r\n  color: green;\r\n}\r\n\r\n.btn_del {\r\n  color: red;\r\n  padding:.5rem 1rem;\r\n  letter-spacing: .3rem;\r\n}\r\n\r\n\r\n.btn_add:hover, .btn_del:hover {\r\n  border-radius: 5rem ;\r\n\r\n}\r\n\r\n.btn_add:hover {  \r\n  padding: 1rem 3rem;\r\n  cursor: pointer;\r\n  background-color: green;\r\n  color: white;\r\n}\r\n\r\n\r\n.btn_del:hover {  \r\n  cursor: pointer;\r\n  background-color: red; \r\n  color: white;\r\n}\r\n\r\n\r\n.btn_submit {\r\n  padding: 5rem;\r\n  text-align: center;\r\n}\r\n\r\n.btn_submit button {\r\n  transition: all .5s ease; \r\n  padding: 1rem 3rem; \r\n  border-radius: 5rem;\r\n\r\n\r\n}\r\n\r\n.btn_submit button:hover {\r\n  color: white;\r\n  cursor: pointer;  \r\n  letter-spacing: 1.5rem;\r\n  background-color: var(--clr-secondary);\r\n  transition: all .5s ease;  \r\n\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
