@@ -154,8 +154,7 @@ function App() {
             if(item.num == num) {
                 item.name_company = e.target.value;
             }
-        }
-        //console.log(tempArray[num-1].name_company)
+        }        
         setExperience(tempArray);
         console.log(experience);
     }
@@ -187,13 +186,6 @@ function App() {
         let date = new Date(dateInput);
         let value = monthNames[date.getMonth()] + " " + date.getFullYear();
         
-        // for(let item of tempArray ) {
-        //     if(item.num == num) {
-               
-        //     }
-        // }
-
-
         for(let item of tempArray ) {
             if(item.num == num) {
                 if(dir == "start") {
@@ -253,7 +245,7 @@ function App() {
         setGenInfo({            
             name: genInfo.name,
             email: genInfo.email,
-            phone: e.target.value,
+            phone: genInfo.phone,
             summary: e.target.value            
         });
     }
@@ -281,11 +273,6 @@ function App() {
         }
     }
     
-
-    // test(){
-    //     console.log(1)
-    // }
-
     
         return(
             <div className="app">
