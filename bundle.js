@@ -196,7 +196,6 @@ function App() {
           item.name_company = e.target.value;
         }
       }
-      //console.log(tempArray[num-1].name_company)
     } catch (err) {
       _iterator4.e(err);
     } finally {
@@ -232,12 +231,6 @@ function App() {
     var tempArray = _toConsumableArray(experience);
     var date = new Date(dateInput);
     var value = monthNames[date.getMonth()] + " " + date.getFullYear();
-
-    // for(let item of tempArray ) {
-    //     if(item.num == num) {
-
-    //     }
-    // }
     var _iterator6 = _createForOfIteratorHelper(tempArray),
       _step6;
     try {
@@ -307,7 +300,7 @@ function App() {
     setGenInfo({
       name: genInfo.name,
       email: genInfo.email,
-      phone: e.target.value,
+      phone: genInfo.phone,
       summary: e.target.value
     });
   };
@@ -328,11 +321,6 @@ function App() {
       setButtonText("Submit");
     }
   };
-
-  // test(){
-  //     console.log(1)
-  // }
-
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "app"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
